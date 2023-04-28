@@ -1,0 +1,44 @@
+.header {
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .img_wapper {
+    margin: 10px 50px;
+    position: relative;
+    height: 40px;
+    width: 130px;
+    @media screen and (max-width: 768px) {
+      margin: 10px;
+    }
+  }
+  .links_container {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    gap: 10px;
+
+    li {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      text-align: center;
+      color: rgb(0, 113, 188);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 5px;
+      .loginSvg_wrapper {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        color: rgb(0, 113, 188);
+      }
+    }
+  }
+}

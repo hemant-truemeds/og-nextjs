@@ -1,0 +1,15 @@
+{
+  "name": "next-poc",
+  "plugins": [
+    {
+      "name": "CSS / styled-jsx",
+      "description": "Next.js comes with built-in support for CSS and styled-jsx. Styled-jsx is full, scoped and component-friendly CSS support for JSX (rendered on the server or the client).",
+      "url": "https://github.com/vercel/styled-jsx"
+    },
+    {
+      "name": "Docker",
+      "description": "Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.",
+      "url": "https://www.docker.com/get-started"
+    }
+  ]
+}
