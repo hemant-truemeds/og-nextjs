@@ -4,13 +4,12 @@ import { Header } from "@components/header";
 import SearchSection from "@components/searchSection/SearchSection";
 import SkeletonCustom from "@components/skeletonEffect";
 import SliderComponents from "@components/sliderComponent";
-import { GetServerSideProps } from "next";
 import Head from "next/head";
 import React from "react";
 import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
-  const { data } = props;
+  const { bannerData } = props;
   return (
     <>
       <Head>
@@ -26,7 +25,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
         />
       </Head>
       <>
-        {data ? (
+        {bannerData ? (
           <div
             style={{
               display: "flex",
@@ -37,7 +36,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
             <Header />
             <SearchSection />
             <SliderComponents />
-            <OfferCardSection apiCardData={data?.hits?.hits} />
+            <OfferCardSection apiCardData={bannerData?.hits?.hits} />
             <Footer />
           </div>
         ) : (

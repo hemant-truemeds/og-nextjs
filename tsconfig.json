@@ -25,6 +25,12 @@
       "@components": [
         "src/components"
       ],
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@modules": [
+        "src/modules"
+      ],
       "@styles/*": [
         "src/styles/*"
       ],
@@ -48,6 +54,12 @@
       ],
       "@images": [
         "src/images"
+      ],
+      "@api/*": [
+        "src/api/*"
+      ],
+      "@api": [
+        "src/api"
       ]
     },
     "incremental": true

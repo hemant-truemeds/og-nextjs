@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://nal.tmmumbai.in/";
 
-const axiosInstance = axios.create({
+const axiosClient = axios.create({
   baseURL: BASE_URL,
   timeout: 8000,
   headers: {
@@ -29,4 +29,4 @@ axios.interceptors.response.use(
   }
 );
 
-export { axiosInstance };
+export { axiosClient };

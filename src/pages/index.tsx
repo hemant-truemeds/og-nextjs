@@ -1,32 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GetServerSideProps } from "next";
-import HomeModule from "src/modules/home";
-
-import { axiosInstance } from "src/api/axiosClient";
-import { HOME_APIS } from "src/api/homepageApi";
+import { HomepageApiCalls } from "@api/apiCalls/homepageApiCalls";
+import HomeModule from "@modules/home";
 
 export interface IHomePage {
-  data: any;
+  bannerData: any;
 }
 
 const Home: React.FC<IHomePage> = (props) => {
-  const { data } = props;
+  const { bannerData } = props;
 
-  return <HomeModule data={data} />;
+  return <HomeModule bannerData={bannerData} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const res = await axiosInstance.post(
-      HOME_APIS.BANNERS,
-      JSON.stringify(["BANNERS", "ALERT", "HOME_GENERIC"])
-    );
-    // console.log(res?.data);
-    // const res = await fetch("https://poc-api-mauve.vercel.app/poc_json/fp");
-    // const data = await res.json();
+    const res = await HomepageApiCalls();
+    console.log("ssr", res?.bannerData);
     return {
       props: {
-        data: res?.data,
+        bannerData: res?.bannerData,
       },
     };
   } catch (error) {
@@ -34,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
   return {
     props: {
-      data: "",
+      data: {},
     },
   };
 };
