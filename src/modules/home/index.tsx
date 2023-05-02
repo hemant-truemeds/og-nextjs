@@ -1,4 +1,5 @@
 import OfferCardSection from "@components/OfferCardSection";
+import ArticleCards from "@components/articleCard";
 import Footer from "@components/footer";
 import { Header } from "@components/header";
 import SearchSection from "@components/searchSection/SearchSection";
@@ -9,8 +10,8 @@ import React from "react";
 import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
-  const { elastic_search, bannerData } = props;
-  console.log({ bannerData });
+  const { elastic_search, bannerData, wpArticles } = props;
+  // console.log({ wpArticles });
   return (
     <>
       <Head>
@@ -29,6 +30,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
       <SearchSection />
       <SliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
+      <ArticleCards wpArticles={wpArticles} />
       <Footer />
       {/* <>
         {elastic_search ? (

@@ -41,7 +41,7 @@ const SliderComponents = (props: IProps) => {
       >
         {banners?.map((item: any) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
                 <Image
                   loading="lazy"

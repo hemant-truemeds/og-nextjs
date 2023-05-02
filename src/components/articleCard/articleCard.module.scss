@@ -1,0 +1,68 @@
+.articleCardsWrapper {
+  padding: 2rem 2rem;
+  background-color: #fff;
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+  .titleSection {
+    margin-bottom: 12px !important;
+    padding: 0px !important;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 30px;
+    font-size: 24px !important;
+    color: rgb(79, 88, 94) !important;
+  }
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 10px;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .cardContainer {
+      min-width: 26.6875rem;
+      margin-right: 2.5rem;
+      .imageWrapper {
+        border-radius: 10px 10px 0 0;
+        .image {
+          border-radius: 10px 10px 0 0;
+        }
+      }
+      .description {
+        padding: 28px 20px 30px;
+        .imageTitle {
+          margin-bottom: 0;
+          min-height: 3rem;
+          width: 100%;
+          overflow: hidden;
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.5rem;
+          letter-spacing: 0;
+          text-align: left;
+          color: rgb(64, 70, 77);
+          text-overflow: ellipsis;
+          position: relative;
+          text-decoration: none;
+        }
+        .readMore {
+          display: block;
+          font-size: 16px;
+          line-height: 18px;
+          font-weight: 700;
+          letter-spacing: 0em;
+          text-align: left;
+          color: rgb(0, 113, 189);
+          min-height: auto;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
