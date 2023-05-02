@@ -3,7 +3,7 @@ import styles from "./card.module.scss";
 import Image, { StaticImageData } from "next/image";
 
 interface IProps {
-  img_url: StaticImageData;
+  img_url: StaticImageData | string;
   name: string;
   price: number;
   mrp: number;
@@ -19,7 +19,7 @@ const OfferCard = (props: IProps) => {
         <div className={styles.imgWrapper}>
           <Image
             loading="lazy"
-            src={img_url}
+            src={typeof img_url === "string" ? img_url.split(",")[0] : img_url}
             width={100}
             height={100}
             objectFit="contain"

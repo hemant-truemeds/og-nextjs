@@ -11,19 +11,28 @@ interface IProps {
 
 const OfferCardSection = (props: IProps) => {
   const { apiCardData } = props;
-
+  // console.log(apiCardData);
   return (
     // <React.Suspense fallback={<h1>Loading...</h1>}>
     <div className={styles.offerCardSectionWrapper}>
-      {apiCardData?.map((item: any, index: number) => {
+      {apiCardData?.map((item: any) => {
+        const {
+          original_mrp,
+          original_pts,
+          original_sku_name,
+          product_image_urls,
+        } = item?._source;
         return (
           <OfferCard
-            discount={Math.ceil(Math.random() * 70)}
+            discount={Math.ceil(
+              ((original_mrp - original_pts) / original_pts) * 100
+            )}
             key={item?._id}
-            mrp={item?._source?.original_mrp}
-            price={item?._source?.original_pts}
-            name={item?._source?.original_sku_name}
-            img_url={index % 2 === 0 ? img1 : img2}
+            mrp={original_mrp}
+            price={original_pts}
+            name={original_sku_name}
+            img_url={product_image_urls}
+            // img_url={index % 2 === 0 ? img1 : img2}
           />
         );
       })}

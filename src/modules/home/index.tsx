@@ -9,7 +9,7 @@ import React from "react";
 import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
-  const { bannerData } = props;
+  const { elastic_search } = props;
   return (
     <>
       <Head>
@@ -24,8 +24,13 @@ const HomeModule: React.FC<IHomePage> = (props) => {
           content="Looking for the best medicine half price? Look no further than Truemeds. We offer the best quality at the best prices, so you can save money and feel better."
         />
       </Head>
-      <>
-        {bannerData ? (
+      <Header />
+      <SearchSection />
+      <SliderComponents />
+      <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
+      <Footer />
+      {/* <>
+        {elastic_search ? (
           <div
             style={{
               display: "flex",
@@ -33,16 +38,11 @@ const HomeModule: React.FC<IHomePage> = (props) => {
               minHeight: "100vh",
             }}
           >
-            <Header />
-            <SearchSection />
-            <SliderComponents />
-            <OfferCardSection apiCardData={bannerData?.hits?.hits} />
-            <Footer />
           </div>
         ) : (
           <SkeletonCustom width={`100%`} height={`100vh`} />
         )}
-      </>
+      </> */}
     </>
   );
 };
