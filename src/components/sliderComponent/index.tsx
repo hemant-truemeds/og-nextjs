@@ -39,12 +39,12 @@ const SliderComponents = (props: IProps) => {
         loop
         modules={[Navigation, Pagination, A11y, Keyboard]}
       >
-        {banners?.map((item: any) => {
+        {banners?.map((item: any, index: number) => {
           return (
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
                 <Image
-                  loading="lazy"
+                  {...(index === 0 ? { priority: true } : { loading: "lazy" })}
                   width="700"
                   height="400"
                   objectFit="contain"

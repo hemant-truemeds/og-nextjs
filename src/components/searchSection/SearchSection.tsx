@@ -58,10 +58,10 @@ const SearchSection = () => {
         </div>
       </div>
       <div className={styles.leftImgWrapper}>
-        <Image layout="fill" src={leftSvg} alt="left image" loading="lazy" />
+        <Image layout="fill" src={leftSvg} alt="left image" priority />
       </div>
       <div className={styles.rightImgWrapper}>
-        <Image layout="fill" src={rightSvg} alt="right image" loading="lazy" />
+        <Image layout="fill" src={rightSvg} alt="right image" priority />
       </div>
     </div>
   );

@@ -38,8 +38,8 @@ const ContactUs = () => {
                 <Image
                   src="https://www.truemeds.in/static/media/mail.5af80c42.svg"
                   alt="mail"
-                  width={50}
-                  height={50}
+                  // width={50}
+                  // height={50}
                   layout="fill"
                   objectFit="contain"
                   loading="lazy"
@@ -57,8 +57,8 @@ const ContactUs = () => {
                 <Image
                   src="https://www.truemeds.in/static/media/call.37d36705.svg"
                   alt="mail"
-                  width={50}
-                  height={50}
+                  // width={50}
+                  // height={50}
                   layout="fill"
                   objectFit="contain"
                   loading="lazy"
