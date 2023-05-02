@@ -1,7 +1,9 @@
 import { HOME_APIS, HOME_STATIC_PAYLOAD } from "@api/apiConstants/homepageApi";
 import { axiosBase, axiosWp } from "@api/axiosClient";
+import { bannerData } from "@constants/jsonData/bannerData";
 import { elastic_search } from "@constants/jsonData/elastic_search";
 import { getDeliveryCharges } from "@constants/jsonData/getDeliveryCharges";
+import { mobileMaster } from "@constants/jsonData/mobileMaster";
 import { wpArticles } from "@constants/jsonData/wpArticles";
 
 const HomepageApiCalls = async () => {
@@ -39,11 +41,11 @@ const HomepageApiCalls = async () => {
     // console.log({ mobileMaster: mobileMaster.data });
 
     return {
-      bannerData: {},
+      bannerData: bannerData,
       wpArticles: wpArticles,
       elastic_search: elastic_search,
       getDeliveryCharges: getDeliveryCharges,
-      mobileMaster: {},
+      mobileMaster: mobileMaster,
     };
   } catch (error) {
     console.log({ error });
