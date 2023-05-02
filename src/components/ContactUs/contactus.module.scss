@@ -1,9 +1,12 @@
 .contactUsWrapper {
-  padding-top: 3rem;
+  padding-top: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  @media screen and (max-width: 968px) {
+    padding-top: 0rem;
+  }
   .whyTruemedsContainer {
     width: 85%;
     position: relative;
@@ -16,6 +19,12 @@
     width: 70%;
     margin: 0px auto;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 968px) {
+      width: 100%;
+      background: #fff;
+    }
     .whyTruemedsInner {
       padding: 10px 20px;
       border-radius: 10px;
@@ -24,6 +33,9 @@
       border-right: 1px solid rgb(201, 232, 254);
       border-image: linear-gradient(rgb(0, 113, 188), rgb(201, 232, 254)) 1 / 1 /
         0 stretch;
+      @media screen and (max-width: 968px) {
+        display: none;
+      }
       .listWrapper {
         h2 {
           font-style: normal;
@@ -36,7 +48,7 @@
         .listItem {
           width: 90%;
           margin: 10px 0px;
-          &:first-child {
+          &.firstChild {
             width: calc(100% - 330px);
           }
           h3 {
@@ -53,6 +65,67 @@
             font-size: 16px;
             color: rgb(51, 51, 51);
           }
+        }
+      }
+    }
+    .getInTouchWrapper {
+      width: 18.125rem;
+      height: 20.5rem;
+      padding: 1rem;
+      margin: 1rem 0px;
+      position: absolute;
+      top: -8rem;
+      right: 3rem;
+      box-sizing: border-box;
+      background: rgb(255, 255, 255);
+      box-shadow: rgba(87, 100, 173, 0.22) 0px 20px 50px;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: column;
+      -webkit-box-pack: center;
+      justify-content: center;
+      @media screen and (max-width: 968px) {
+        position: relative;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+      }
+      header {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        color: rgb(0, 48, 85);
+      }
+      p {
+        margin: 10px 0px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: rgb(51, 51, 51);
+      }
+    }
+    .infoWrapper {
+      margin-top: 1rem;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      .infoItem {
+        margin: 0.625rem 0;
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        .imageWrapper {
+          width: 30px;
+          height: 30px;
+          position: relative;
+        }
+        a {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: center;
+          color: rgb(0, 113, 188);
+          text-decoration: none;
         }
       }
     }

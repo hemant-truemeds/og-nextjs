@@ -2,7 +2,7 @@ const withPlugins = require("next-compose-plugins");
 
 module.exports = withPlugins([], {
   images: {
-    domains: ["assets.truemeds.in", "truemedsblog.in"],
+    domains: ["assets.truemeds.in", "truemedsblog.in", "www.truemeds.in"],
   },
   experimental: {
     largePageDataBytes: 500 * 1000,
