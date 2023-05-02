@@ -17,7 +17,12 @@ import styles from "./slider.module.scss";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
-const SliderComponents = () => {
+interface IProps {
+  banners: any;
+}
+
+const SliderComponents = (props: IProps) => {
+  const { banners } = props;
   return (
     <div className={styles.swiperModalWrapper}>
       <Swiper
@@ -34,7 +39,26 @@ const SliderComponents = () => {
         loop
         modules={[Navigation, Pagination, A11y, Keyboard]}
       >
-        <SwiperSlide>
+        {banners?.map((item: any) => {
+          return (
+            <SwiperSlide>
+              <div className={styles.unsetImage}>
+                <Image
+                  // loading="lazy"
+                  width="700"
+                  height="400"
+                  objectFit="contain"
+                  className={styles.customImage}
+                  src={item?.image}
+                  alt=""
+                  // width={500}
+                  // height={300}
+                />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+        {/* <SwiperSlide>
           <Image loading="lazy" src={img1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
@@ -45,7 +69,7 @@ const SliderComponents = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Image loading="lazy" src={img4} alt="" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );

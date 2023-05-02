@@ -1,3 +1,18 @@
 .swiperModalWrapper {
   height: 70vh;
+  @media screen and (max-width: 768px) {
+    height: 40vh;
+  }
+  // .unsetImage {
+  //   width: 100%;
+  //   & > div {
+  //     position: unset !important;
+  //   }
+  //   .customImage {
+  //     object-fit: contain;
+  //     width: 100% !important;
+  //     position: relative !important;
+  //     height: unset !important;
+  //   }
+  // }
 }

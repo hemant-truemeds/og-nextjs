@@ -9,7 +9,8 @@ import React from "react";
 import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
-  const { elastic_search } = props;
+  const { elastic_search, bannerData } = props;
+  console.log({ bannerData });
   return (
     <>
       <Head>
@@ -26,7 +27,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
       </Head>
       <Header />
       <SearchSection />
-      <SliderComponents />
+      <SliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
       <Footer />
       {/* <>
