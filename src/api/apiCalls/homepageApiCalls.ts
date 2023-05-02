@@ -1,5 +1,8 @@
 import { HOME_APIS, HOME_STATIC_PAYLOAD } from "@api/apiConstants/homepageApi";
 import { axiosBase, axiosWp } from "@api/axiosClient";
+import { elastic_search } from "@constants/jsonData/elastic_search";
+import { getDeliveryCharges } from "@constants/jsonData/getDeliveryCharges";
+import { wpArticles } from "@constants/jsonData/wpArticles";
 
 const HomepageApiCalls = async () => {
   try {
@@ -37,9 +40,9 @@ const HomepageApiCalls = async () => {
 
     return {
       bannerData: {},
-      wpArticles: [],
-      elastic_search: {},
-      getDeliveryCharges: {},
+      wpArticles: wpArticles,
+      elastic_search: elastic_search,
+      getDeliveryCharges: getDeliveryCharges,
       mobileMaster: {},
     };
   } catch (error) {
@@ -49,6 +52,14 @@ const HomepageApiCalls = async () => {
 };
 
 export { HomepageApiCalls };
+
+// return {
+//   bannerData: {},
+//   wpArticles: [],
+//   elastic_search: {},
+//   getDeliveryCharges: {},
+//   mobileMaster: {},
+// };
 
 // const HomepageApiCalls = async () => {
 //   try {
