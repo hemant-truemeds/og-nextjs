@@ -12,11 +12,17 @@ const HomepageApiCalls = async () => {
       JSON.stringify(["BANNERS", "ALERT", "HOME_GENERIC"])
     );
     const wpArticles = await axiosWp.get(HOME_APIS.WP_ARTICLES);
-    // console.log({ elastic_search });
+
+    const getDeliveryCharges = await axiosBase.get(
+      HOME_APIS.GET_DELIVERY_CHARGES
+    );
+
+    // console.log({ getDeliveryCharges: getDeliveryCharges.data });
     return {
       bannerData: bannerData?.data,
       wpArticles: wpArticles?.data,
       elastic_search: elastic_search?.data,
+      getDeliveryCharges: getDeliveryCharges?.data,
     };
   } catch (error) {
     console.log({ error });
