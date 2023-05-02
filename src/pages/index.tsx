@@ -5,21 +5,24 @@ import HomeModule from "@modules/home";
 
 export interface IHomePage {
   bannerData: any;
+  wpArticles: any;
 }
 
 const Home: React.FC<IHomePage> = (props) => {
-  const { bannerData } = props;
+  const { bannerData = {}, wpArticles = {} } = props;
+  console.log(props);
 
-  return <HomeModule bannerData={bannerData} />;
+  return <HomeModule bannerData={bannerData} wpArticles={wpArticles} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const res = await HomepageApiCalls();
-    console.log("ssr", res?.bannerData);
+    const { bannerData = {}, wpArticles = {} } = await HomepageApiCalls();
+    // console.log("ssr", res?.bannerData);
     return {
       props: {
-        bannerData: res?.bannerData,
+        bannerData,
+        wpArticles,
       },
     };
   } catch (error) {
@@ -27,7 +30,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
   return {
     props: {
-      data: {},
+      bannerData: {},
+      wpArticles: {},
     },
   };
 };
