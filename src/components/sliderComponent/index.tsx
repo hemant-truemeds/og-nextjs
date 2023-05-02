@@ -8,10 +8,10 @@ import SwiperCore, {
   A11y,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import img1 from "@images/sliderImg1.webp";
-import img2 from "@images/sliderImg2.webp";
-import img3 from "@images/sliderImg3.webp";
-import img4 from "@images/sliderImg4.webp";
+// import img1 from "@images/sliderImg1.webp";
+// import img2 from "@images/sliderImg2.webp";
+// import img3 from "@images/sliderImg3.webp";
+// import img4 from "@images/sliderImg4.webp";
 import Image from "next/image";
 import styles from "./slider.module.scss";
 
@@ -27,9 +27,9 @@ const SliderComponents = (props: IProps) => {
     <div className={styles.swiperModalWrapper}>
       <Swiper
         grabCursor={true}
-        centeredSlides={true}
-        spaceBetween={20}
-        slidesPerView={1}
+        // centeredSlides={true}
+        // spaceBetween={20}
+        slidesPerView={2}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
@@ -44,7 +44,9 @@ const SliderComponents = (props: IProps) => {
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
                 <Image
-                  {...(index === 0 ? { priority: true } : { loading: "lazy" })}
+                  {...([0, 1].includes(index)
+                    ? { priority: true }
+                    : { loading: "lazy" })}
                   width="700"
                   height="400"
                   objectFit="contain"
