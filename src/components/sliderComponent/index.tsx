@@ -44,7 +44,7 @@ const SliderComponents = (props: IProps) => {
             <SwiperSlide>
               <div className={styles.unsetImage}>
                 <Image
-                  // loading="lazy"
+                  loading="lazy"
                   width="700"
                   height="400"
                   objectFit="contain"
