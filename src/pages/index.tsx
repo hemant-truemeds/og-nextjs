@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const {
       bannerData = {},
-      wpArticles = {},
+      wpArticles = [],
       elastic_search = {},
       getDeliveryCharges = {},
       mobileMaster = {},
@@ -57,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       bannerData: {},
-      wpArticles: {},
+      wpArticles: [],
       elastic_search: {},
       getDeliveryCharges: {},
       mobileMaster: {},
