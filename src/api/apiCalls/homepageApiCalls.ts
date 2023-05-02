@@ -41,12 +41,20 @@ const HomepageApiCalls = async () => {
     // console.log({ mobileMaster: mobileMaster.data });
 
     return {
-      bannerData: bannerData,
-      wpArticles: wpArticles,
-      elastic_search: elastic_search,
-      getDeliveryCharges: getDeliveryCharges,
-      mobileMaster: mobileMaster,
+      bannerData: {},
+      wpArticles: [],
+      elastic_search: {},
+      getDeliveryCharges: {},
+      mobileMaster: {},
     };
+
+    // return {
+    //   bannerData: bannerData,
+    //   wpArticles: wpArticles,
+    //   elastic_search: elastic_search,
+    //   getDeliveryCharges: getDeliveryCharges,
+    //   mobileMaster: mobileMaster,
+    // };
   } catch (error) {
     console.log({ error });
   }
