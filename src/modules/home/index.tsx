@@ -1,9 +1,10 @@
+import ContactUs from "@components/ContactUs";
 import OfferCardSection from "@components/OfferCardSection";
 import ArticleCards from "@components/articleCard";
 import Footer from "@components/footer";
 import { Header } from "@components/header";
 import SearchSection from "@components/searchSection/SearchSection";
-import SkeletonCustom from "@components/skeletonEffect";
+// import SkeletonCustom from "@components/skeletonEffect";
 import SliderComponents from "@components/sliderComponent";
 import Head from "next/head";
 import React from "react";
@@ -31,6 +32,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
       <SliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
       <ArticleCards wpArticles={wpArticles} />
+      <ContactUs />
       <Footer />
       {/* <>
         {elastic_search ? (
