@@ -12,7 +12,7 @@ import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
   const { elastic_search, bannerData, wpArticles } = props;
-  // console.log({ wpArticles });
+  console.log({ props });
   return (
     <>
       <Head>

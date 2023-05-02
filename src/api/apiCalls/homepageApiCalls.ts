@@ -3,29 +3,43 @@ import { axiosBase, axiosWp } from "@api/axiosClient";
 
 const HomepageApiCalls = async () => {
   try {
-    const elastic_search = await axiosBase.post(
+    const elastic_search = axiosBase.post(
       HOME_APIS.ELASTIC_SEARCH,
       HOME_STATIC_PAYLOAD.ELASTIC_SEARCH_PAYLOAD
     );
-    const bannerData = await axiosBase.post(
+    const bannerData = axiosBase.post(
       HOME_APIS.BANNERS,
       JSON.stringify(["BANNERS", "ALERT", "HOME_GENERIC"])
     );
-    const wpArticles = await axiosWp.get(HOME_APIS.WP_ARTICLES);
+    const wpArticles = axiosWp.get(HOME_APIS.WP_ARTICLES);
 
-    const getDeliveryCharges = await axiosBase.get(
-      HOME_APIS.GET_DELIVERY_CHARGES
-    );
-    const mobileMaster = await axiosBase.post(HOME_APIS.MOBILE_MASTER);
+    const getDeliveryCharges = axiosBase.get(HOME_APIS.GET_DELIVERY_CHARGES);
+    const mobileMaster = axiosBase.post(HOME_APIS.MOBILE_MASTER);
+
+    const allData = await Promise.all([
+      elastic_search,
+      bannerData,
+      wpArticles,
+      getDeliveryCharges,
+      mobileMaster,
+    ]);
+    const [
+      elastic_search_res,
+      bannerData_res,
+      wpArticles_res,
+      getDeliveryCharges_res,
+      mobileMaster_res,
+    ] = allData;
+    // console.log({ allData });
 
     // console.log({ mobileMaster: mobileMaster.data });
 
     return {
-      bannerData: bannerData?.data,
-      wpArticles: wpArticles?.data,
-      elastic_search: elastic_search?.data,
-      getDeliveryCharges: getDeliveryCharges?.data,
-      mobileMaster: mobileMaster?.data,
+      bannerData: bannerData_res?.data,
+      wpArticles: wpArticles_res?.data,
+      elastic_search: elastic_search_res?.data,
+      getDeliveryCharges: getDeliveryCharges_res?.data,
+      mobileMaster: mobileMaster_res?.data,
     };
   } catch (error) {
     console.log({ error });
