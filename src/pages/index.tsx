@@ -8,10 +8,17 @@ export interface IHomePage {
   wpArticles: any;
   elastic_search: any;
   getDeliveryCharges: any;
+  mobileMaster: any;
 }
 
 const Home: React.FC<IHomePage> = (props) => {
-  const { bannerData, wpArticles, elastic_search, getDeliveryCharges } = props;
+  const {
+    bannerData,
+    wpArticles,
+    elastic_search,
+    getDeliveryCharges,
+    mobileMaster,
+  } = props;
   // console.log(props);
 
   return (
@@ -20,6 +27,7 @@ const Home: React.FC<IHomePage> = (props) => {
       wpArticles={wpArticles}
       elastic_search={elastic_search}
       getDeliveryCharges={getDeliveryCharges}
+      mobileMaster={mobileMaster}
     />
   );
 };
@@ -31,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       wpArticles = {},
       elastic_search = {},
       getDeliveryCharges = {},
+      mobileMaster = {},
     } = await HomepageApiCalls();
     // console.log("ssr", res?.bannerData);
     return {
@@ -39,6 +48,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         wpArticles,
         elastic_search,
         getDeliveryCharges,
+        mobileMaster,
       },
     };
   } catch (error) {
@@ -50,6 +60,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       wpArticles: {},
       elastic_search: {},
       getDeliveryCharges: {},
+      mobileMaster: {},
     },
   };
 };

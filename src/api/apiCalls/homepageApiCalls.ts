@@ -16,15 +16,16 @@ const HomepageApiCalls = async () => {
     const getDeliveryCharges = await axiosBase.get(
       HOME_APIS.GET_DELIVERY_CHARGES
     );
-    // const mobileMaster = await axiosBase.get(HOME_APIS.MOBILE_MASTER);
+    const mobileMaster = await axiosBase.post(HOME_APIS.MOBILE_MASTER);
 
     // console.log({ mobileMaster: mobileMaster.data });
+
     return {
       bannerData: bannerData?.data,
       wpArticles: wpArticles?.data,
       elastic_search: elastic_search?.data,
       getDeliveryCharges: getDeliveryCharges?.data,
-      // mobileMaster: mobileMaster?.data,
+      mobileMaster: mobileMaster?.data,
     };
   } catch (error) {
     console.log({ error });
