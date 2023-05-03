@@ -16,7 +16,7 @@ export const HomepageApiCalls = async () => {
       HOME_APIS.BANNERS,
       HOME_STATIC_PAYLOAD.BANNER_PAYLOAD
     );
-    // const wpArticles = axiosWp.get(HOME_APIS.WP_ARTICLES);
+    const wpArticles = axiosWp.get(HOME_APIS.WP_ARTICLES);
 
     const getDeliveryCharges = axiosBase.get(HOME_APIS.GET_DELIVERY_CHARGES);
     const mobileMaster = axiosBase.post(HOME_APIS.MOBILE_MASTER);
@@ -24,7 +24,7 @@ export const HomepageApiCalls = async () => {
     const allData = await Promise.allSettled([
       elastic_search,
       bannerData,
-      // wpArticles,
+      wpArticles,
       getDeliveryCharges,
       mobileMaster,
     ]);
@@ -32,7 +32,7 @@ export const HomepageApiCalls = async () => {
     const [
       elastic_search_res,
       bannerData_res,
-      // wpArticles_res,
+      wpArticles_res,
       getDeliveryCharges_res,
       mobileMaster_res,
     ] = allData;
@@ -46,10 +46,9 @@ export const HomepageApiCalls = async () => {
           ? bannerData_res?.value?.data
           : {},
       wpArticles:
-        // wpArticles_res.status === "fulfilled"
-        //   ? wpArticles_res?.value?.data
-        //   :
-        [],
+        wpArticles_res.status === "fulfilled"
+          ? wpArticles_res?.value?.data
+          : [],
       elastic_search:
         elastic_search_res.status === "fulfilled"
           ? elastic_search_res?.value?.data
