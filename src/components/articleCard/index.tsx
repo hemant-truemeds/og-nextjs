@@ -14,30 +14,29 @@ const ArticleCards = (props: IProps) => {
     <div className={styles.articleCardsWrapper}>
       <h2 className={styles.titleSection}>Health Articles</h2>
       <div className={styles.cardWrapper}>
-        {/* {wpArticles &&
-          wpArticles?.map((item: any) => {
-            return (
-              <div key={item?.id} className={styles.cardContainer}>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    className={styles.image}
-                    objectFit="contain"
-                    loading="lazy"
-                    width={600}
-                    height={260}
-                    src={item?.yoast_head_json?.og_image?.[0]?.url}
-                    alt=""
-                  />
-                </div>
-                <div className={styles.description}>
-                  <Link href={"/"}>
-                    <a className={styles.imageTitle}>{item?.title?.rendered}</a>
-                  </Link>
-                  <p className={styles.readMore}>Read more</p>
-                </div>
+        {wpArticles?.map((item: any) => {
+          return (
+            <div key={item?.id} className={styles.cardContainer}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  className={styles.image}
+                  objectFit="contain"
+                  loading="lazy"
+                  width={600}
+                  height={260}
+                  src={item?.yoast_head_json?.og_image?.[0]?.url}
+                  alt=""
+                />
               </div>
-            );
-          })} */}
+              <div className={styles.description}>
+                <Link href={"/"}>
+                  <a className={styles.imageTitle}>{item?.title?.rendered}</a>
+                </Link>
+                <p className={styles.readMore}>Read more</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
