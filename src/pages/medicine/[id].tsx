@@ -8,6 +8,7 @@ import {
   PreviewData,
 } from "next";
 import { ParsedUrlQuery } from "querystring";
+import Head from "next/head";
 
 interface IProps {
   productData: any;
@@ -19,10 +20,22 @@ const ProductPage = (props: IProps) => {
   console.log(productData);
 
   return (
-    <div>
-      ProductPage ID: -{" "}
-      {productData?.hits?.hits?.[0]?._source?.original_sku_name}
-    </div>
+    <>
+      <Head>
+        <meta
+          name="description"
+          content="View Sugar Free Gold Low Calories Sweetner Pellets 500 uses, composition, side effects, price, substitutes, drug interactions, precautions, warnings, expert advice and buy online at best price on Truemeds"
+        />
+        <title>
+          {productData?.hits?.hits?.[0]?._source?.original_sku_name ||
+            "Truemeds"}
+        </title>
+      </Head>
+      <div>
+        ProductPage ID: -{" "}
+        {productData?.hits?.hits?.[0]?._source?.original_sku_name}
+      </div>
+    </>
   );
 };
 
