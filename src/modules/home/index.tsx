@@ -1,11 +1,34 @@
-import ContactUs from "@components/ContactUs";
+import dynamic from "next/dynamic";
 import OfferCardSection from "@components/OfferCardSection";
-import ArticleCards from "@components/articleCard";
-import Footer from "@components/footer";
 import { Header } from "@components/header";
-import SearchSection from "@components/searchSection/SearchSection";
 // import SkeletonCustom from "@components/skeletonEffect";
-import SliderComponents from "@components/sliderComponent";
+// import Footer from "@components/footer";
+// import ContactUs from "@components/ContactUs";
+// import SearchSection from "@components/searchSection/SearchSection";
+// import SliderComponents from "@components/sliderComponent";
+// import ArticleCards from "@components/articleCard";
+
+const DynamicSearchSection = dynamic(
+  () => import("@components/searchSection/SearchSection"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+const DynamicSliderComponents = dynamic(
+  () => import("@components/sliderComponent"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
+  loading: () => <p>Loading...</p>,
+});
+const DynamicFooter = dynamic(() => import("@components/footer"), {
+  loading: () => <p>Loading...</p>,
+});
+const DynamicContactus = dynamic(() => import("@components/ContactUs"), {
+  loading: () => <p>Loading...</p>,
+});
 import Head from "next/head";
 import React from "react";
 import { IHomePage } from "src/pages";
@@ -28,12 +51,12 @@ const HomeModule: React.FC<IHomePage> = (props) => {
         />
       </Head>
       <Header />
-      <SearchSection />
-      <SliderComponents banners={bannerData?.banners} />
+      <DynamicSearchSection />
+      <DynamicSliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
-      <ArticleCards wpArticles={wpArticles} />
-      <ContactUs />
-      <Footer />
+      <DynamicArticleCards wpArticles={wpArticles} />
+      <DynamicContactus />
+      <DynamicFooter />
       {/* <>
         {elastic_search ? (
           <div
