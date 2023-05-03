@@ -1,5 +1,5 @@
 import React from "react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { HomepageApiCalls } from "@api/apiCalls/homepageApiCalls";
 import HomeModule from "@modules/home";
 
@@ -32,7 +32,7 @@ const Home: React.FC<IHomePage> = (props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const {
       bannerData = {},
