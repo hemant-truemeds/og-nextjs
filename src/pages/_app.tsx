@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-// import Script from "next/script";
+import Script from "next/script";
 import "@styles/global.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,13 +14,13 @@ import "react-loading-skeleton/dist/skeleton.css";
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
-      {/* <Script
+      <Script
         strategy="lazyOnload"
         async
         defer
         src="https://kit.fontawesome.com/1c4700fdde.js"
         crossOrigin="anonymous"
-      /> */}
+      />
       <Component {...pageProps} />;
     </>
   );
