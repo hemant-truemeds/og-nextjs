@@ -5,8 +5,8 @@ enum HOME_APIS {
   ELASTIC_SEARCH = "CustomerService/callElasticSearch?warehouseId=3",
   GET_DELIVERY_CHARGES = "CustomerService/getCustomerDeliveryChargeData",
   MOBILE_MASTER = "CustomerService/mobileMaster",
-  SAVE_CUST_DEVICE_ID = "CustomerService/saveCustomerDeviceInfo",
   WP_ARTICLES = "getWordpressArticle?urlParams=posts?status=publish&_embed&order=desc&per_page=10&headers=true",
+  // SAVE_CUST_DEVICE_ID = "CustomerService/saveCustomerDeviceInfo",
 }
 
 const HOME_STATIC_PAYLOAD = {
