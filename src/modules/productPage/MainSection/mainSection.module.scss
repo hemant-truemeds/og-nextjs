@@ -1,0 +1,36 @@
+.mainSectionWrapper {
+  min-height: 100vh;
+  background-color: #fff;
+  .main_innerContainer {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1.875rem 0;
+    .breadcrumb {
+      margin: 0;
+      padding: 0;
+      //   margin-bottom: 2.0625rem;
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.85);
+      line-height: 1.5715;
+      list-style: none;
+      color: rgba(0, 0, 0, 0.45);
+      font-size: 0.875rem;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      .breadcrumbLink {
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.375rem;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: rgb(82, 88, 102);
+        cursor: pointer;
+      }
+      .breadcrumbSeparator {
+        margin: 0 8px;
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}
