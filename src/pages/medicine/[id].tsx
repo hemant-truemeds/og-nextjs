@@ -17,7 +17,7 @@ interface IProps {
 const ProductPage = (props: IProps) => {
   const { productData } = props;
 
-  // console.log(props);
+  console.log(props);
 
   return (
     <>
