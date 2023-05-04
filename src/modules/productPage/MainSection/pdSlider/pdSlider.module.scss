@@ -1,0 +1,22 @@
+.prevButton {
+  background-color: transparent;
+  top: calc(50% - 10px);
+  &::after {
+    content: "\f104";
+    font-family: "FontAwesome";
+    font-size: 2.25rem;
+    color: inherit;
+    transform: rotate(0deg);
+  }
+}
+.nextButton {
+  background-color: transparent;
+  top: calc(50% - 10px);
+  &::after {
+    content: "\f104";
+    font-family: "FontAwesome";
+    font-size: 2.25rem;
+    color: inherit;
+    transform: rotate(180deg);
+  }
+}
