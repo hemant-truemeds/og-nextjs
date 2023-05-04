@@ -9,6 +9,7 @@ import {
 } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
+import ProductPageModule from "@modules/productPage";
 
 interface IProps {
   productData: any;
@@ -39,6 +40,7 @@ const ProductPage = (props: IProps) => {
       <div>
         ProductPage ID: -{" "}
         {productData?.hits?.hits?.[0]?._source?.original_sku_name}
+        <ProductPageModule />
       </div>
     </>
   );
