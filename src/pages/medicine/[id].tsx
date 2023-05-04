@@ -17,7 +17,7 @@ interface IProps {
 const ProductPage = (props: IProps) => {
   const { productData } = props;
 
-  console.log(productData);
+  // console.log(props);
 
   return (
     <>
@@ -25,6 +25,11 @@ const ProductPage = (props: IProps) => {
         <meta
           name="description"
           content="View Sugar Free Gold Low Calories Sweetner Pellets 500 uses, composition, side effects, price, substitutes, drug interactions, precautions, warnings, expert advice and buy online at best price on Truemeds"
+        />
+        <link
+          rel="shortcut icon"
+          href="/icons/favicon.png"
+          type="image/x-icon"
         />
         <title>
           {productData?.hits?.hits?.[0]?._source?.original_sku_name ||
@@ -51,10 +56,17 @@ export const getStaticProps: GetStaticProps = async (
     .slice(id.toUpperCase().indexOf("TM-"))
     .trim();
 
-  const { GET_PRODUCT_DETAILS = {} } = await getProductPage(pdCode as string);
+  const {
+    GET_PRODUCT_DETAILS = {},
+    FETCH_MEDICINE_DETAILS = {},
+    GET_OTHER_PRODUCTS = {},
+  } = await getProductPage(pdCode as string);
+
   return {
     props: {
       productData: GET_PRODUCT_DETAILS,
+      fetchMedicineDetails: FETCH_MEDICINE_DETAILS,
+      getOtherProducts: GET_OTHER_PRODUCTS,
     },
   };
 };
