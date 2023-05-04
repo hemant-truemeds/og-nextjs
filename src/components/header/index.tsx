@@ -5,6 +5,7 @@ import Image from "next/image";
 import Logo from "@components/logo";
 import SearchBar from "@components/SearchBar";
 import styles from "./header.module.scss";
+import Link from "next/link";
 
 interface IProps {
   showSearchBar?: boolean;
@@ -16,7 +17,11 @@ export const Header: React.FC<IProps> = (props) => {
   return (
     <div className={styles.header}>
       <div className={styles.img_wapper}>
-        <Logo />
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </div>
       {showSearchBar ? <SearchBar /> : null}
       <ul

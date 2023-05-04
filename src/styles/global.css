@@ -14,3 +14,10 @@ body {
 body {
   background: rgb(240, 244, 249);
 }
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
