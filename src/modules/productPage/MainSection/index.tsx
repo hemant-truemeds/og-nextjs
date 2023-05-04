@@ -12,13 +12,15 @@ import {
   ICollapsibleConstant,
   collapsibleConstant,
 } from "@constants/collapsableConstant";
+import DoctorList from "./doctorList";
 
 interface IProps {
   productData: any;
+  fetchMedicineDetails: any;
 }
 
 const MainSection: React.FC<IProps> = (props) => {
-  const { productData } = props;
+  const { productData, fetchMedicineDetails } = props;
   const {
     product_image_urls = "",
     original_sku_name = "",
@@ -98,15 +100,36 @@ const MainSection: React.FC<IProps> = (props) => {
               </div>
               <Composition original_composition={original_composition} />
               <div className={styles.collapsableContainer}>
-                {collapsibleConstant.map((item: ICollapsibleConstant) => {
-                  return (
-                    <Collapsible
-                      title={item.title}
-                      description={item.description}
-                      nestedTitle={item.nestedTitle}
-                    />
-                  );
-                })}
+                {collapsibleConstant.map(
+                  (item: ICollapsibleConstant, index: number) => {
+                    return (
+                      <Collapsible
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        nestedTitle={item.nestedTitle}
+                      />
+                    );
+                  }
+                )}
+              </div>
+              <div className={styles.doctorListWrapper}>
+                <h3 className={styles.doctorListTitle}>Certified Content</h3>
+                {/* <DoctorList doctorList={fetchMedicineDetails?.DoctorList} /> */}
+                {fetchMedicineDetails?.DoctorList?.map(
+                  (item: any, index: number) => {
+                    return (
+                      <DoctorList
+                        key={index}
+                        doctorName={item?.doctorName}
+                        experience={item?.experience}
+                        specialist={item?.specialist?.[0]}
+                        image={item?.image}
+                        qualification={item?.qualification?.[0]}
+                      />
+                    );
+                  }
+                )}
               </div>
             </div>
           </div>

@@ -11,7 +11,10 @@ const ProductPageModule = (props: IPdPageProps) => {
   return (
     <div className={styles.pdPageModuleWrapper}>
       <Header showSearchBar />
-      <MainSection productData={productData} />
+      <MainSection
+        productData={productData}
+        fetchMedicineDetails={fetchMedicineDetails}
+      />
       <OfferCardSection apiCardData={getOtherProducts?.hits?.hits} />
       <Footer />
     </div>
