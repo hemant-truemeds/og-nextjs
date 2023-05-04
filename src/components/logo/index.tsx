@@ -1,11 +1,12 @@
+import React from "react";
 import Image from "next/image";
 import logoPng from "@images/TrueLogo.png";
-import React from "react";
 
-export const Logo: React.FC = () => {
+const Logo: React.FC = () => {
   return (
     <Image
-      loading="lazy"
+      //   loading="lazy"
+      priority
       layout="fill"
       src={logoPng}
       alt="nextjs"
@@ -14,3 +15,5 @@ export const Logo: React.FC = () => {
     />
   );
 };
+
+export default Logo;

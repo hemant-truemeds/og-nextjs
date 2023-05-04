@@ -1,8 +1,8 @@
 import React from "react";
 import loginSvg from "@images/login.svg";
 import cartSvg from "@images/cart.svg";
-import { Logo } from "@components/css";
 import Image from "next/image";
+import Logo from "@components/logo";
 import styles from "./index.module.scss";
 
 export const Header: React.FC = () => {
