@@ -2,9 +2,26 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import SwiperCore, {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Keyboard,
+  A11y,
+} from "swiper";
 import styles from "./mainSection.module.scss";
 
-const MainSection = () => {
+interface IProps {
+  productData: any;
+}
+
+SwiperCore.use([EffectCoverflow, Pagination]);
+
+const MainSection: React.FC<IProps> = (props) => {
+  const { productData } = props;
+  const { product_image_urls = "" } =
+    productData?.hits?.hits?.[0]?._source || {};
+  console.log(product_image_urls?.split(","));
   const prevNavRef = useRef(null);
   const nextNavRef = useRef(null);
 
@@ -31,37 +48,38 @@ const MainSection = () => {
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={1}
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
+              //   scrollbar={{ draggable: true }}
               keyboard={true}
               loop
               navigation={{
                 prevEl: prevNavRef.current,
                 nextEl: nextNavRef.current,
               }}
-              // modules={[Navigation, Pagination, A11y, Keyboard]}
+              modules={[Navigation, A11y, Keyboard]}
             >
-              {/* {banners?.map((item: any, index: number) => {
-                return (
-                  <SwiperSlide key={item?.id}>
-                    <div className={styles.unsetImage}>
-                      <Image
-                        {...([0, 1].includes(index)
-                          ? { priority: true }
-                          : { loading: "lazy" })}
-                        width="700"
-                        height="400"
-                        objectFit="contain"
-                        className={styles.customImage}
-                        src={item?.image}
-                        alt=""
-                        // width={500}
-                        // height={300}
-                      />
-                    </div>
-                  </SwiperSlide>
-                );
-              })} */}
+              {product_image_urls
+                ?.split(",")
+                ?.map((item: any, index: number) => {
+                  return (
+                    <SwiperSlide key={item}>
+                      <div className={styles.unsetImage}>
+                        <Image
+                          {...([0, 1].includes(index)
+                            ? { priority: true }
+                            : { loading: "lazy" })}
+                          width="700"
+                          height="400"
+                          objectFit="contain"
+                          className={styles.customImage}
+                          src={item}
+                          alt=""
+                          // width={500}
+                          // height={300}
+                        />
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
               <div
                 ref={prevNavRef}
                 className={`swiper-button-prev ${styles.prevButton}`}

@@ -9,7 +9,7 @@ const ProductPageModule = (props: IPdPageProps) => {
   return (
     <div className={styles.pdPageModuleWrapper}>
       <Header showSearchBar />
-      <MainSection />
+      <MainSection productData={productData} />
     </div>
   );
 };
