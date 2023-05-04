@@ -11,6 +11,12 @@
     width: 130px;
     @media screen and (max-width: 768px) {
       margin: 10px;
+      height: 30px;
+      width: 0px;
+    }
+    @media screen and (min-width: 375px) and (max-width: 992px) {
+      height: 30px;
+      width: 100px;
     }
   }
   .links_container {
@@ -21,6 +27,16 @@
     list-style: none;
     gap: 10px;
 
+    &.showCondition {
+      li {
+        @media screen and (max-width: 992px) {
+          &:nth-child(1),
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
     li {
       font-size: 16px;
       font-style: normal;

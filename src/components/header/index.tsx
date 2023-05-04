@@ -3,15 +3,27 @@ import loginSvg from "@images/login.svg";
 import cartSvg from "@images/cart.svg";
 import Image from "next/image";
 import Logo from "@components/logo";
-import styles from "./index.module.scss";
+import SearchBar from "@components/SearchBar";
+import styles from "./header.module.scss";
 
-export const Header: React.FC = () => {
+interface IProps {
+  showSearchBar?: boolean;
+}
+
+export const Header: React.FC<IProps> = (props) => {
+  const { showSearchBar = false } = props;
+
   return (
     <div className={styles.header}>
       <div className={styles.img_wapper}>
         <Logo />
       </div>
-      <ul className={styles.links_container}>
+      {showSearchBar ? <SearchBar /> : null}
+      <ul
+        className={`${styles.links_container} ${
+          showSearchBar && styles.showCondition
+        }`}
+      >
         <li>Download App</li>
         <li>
           <div className={styles.loginSvg_wrapper}>

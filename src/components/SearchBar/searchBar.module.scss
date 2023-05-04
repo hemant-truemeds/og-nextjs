@@ -1,0 +1,93 @@
+.searchBarWrapper {
+  background-color: #fff;
+  height: 3rem;
+  width: 70vw;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  .location_inputContainer {
+    width: 85%;
+    // background-color: lightgreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem 0 0 0.5rem;
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
+    }
+    .locationContainer {
+      margin: 0.5rem;
+      width: 20%;
+      height: 90%;
+      background-color: #e8f5f9;
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      .locationImageWrapper {
+        padding: 0 5px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .deliverTo {
+        margin-top: -0.125rem;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        white-space: nowrap;
+        max-width: 140px;
+        overflow: hidden;
+        text-align: left;
+      }
+      .arrowImageWrapper {
+        margin-top: 0.3125rem;
+        margin-right: 0.3125rem;
+      }
+    }
+    .searchImageWrapper {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      @media screen and (max-width: 768px) {
+        margin-left: 8px;
+      }
+    }
+    .searchInput {
+      width: 70%;
+      height: 70%;
+      // background-color: bisque;
+      border: none;
+      outline: none;
+      &::placeholder {
+        padding: 0 0.1rem;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0;
+        text-align: left;
+        display: block;
+        color: #979797;
+        // cursor: text;
+      }
+    }
+  }
+  .searchButtonContainer {
+    background: #0071bd;
+    color: #fff;
+    border: 0;
+    padding: 10px 32px;
+    border-radius: 0 8px 8px 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+}
