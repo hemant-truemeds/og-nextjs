@@ -9,6 +9,7 @@ import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "@styles/swiper.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import ErrorBoundary from "@components/ErrorBoundary";
 // import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -21,7 +22,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         src="https://kit.fontawesome.com/1c4700fdde.js"
         crossOrigin="anonymous"
       />
-      <Component {...pageProps} />;
+      <ErrorBoundary>
+        <Component {...pageProps} />;
+      </ErrorBoundary>
     </>
   );
 }
