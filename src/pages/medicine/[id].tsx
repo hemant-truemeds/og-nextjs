@@ -11,12 +11,14 @@ import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 import ProductPageModule from "@modules/productPage";
 
-interface IProps {
+export interface IPdPageProps {
   productData: any;
+  fetchMedicineDetails: any;
+  getOtherProducts: any;
 }
 
-const ProductPage = (props: IProps) => {
-  const { productData } = props;
+const ProductPage = (props: IPdPageProps) => {
+  const { productData, fetchMedicineDetails, getOtherProducts } = props;
 
   console.log(props);
 
@@ -38,9 +40,13 @@ const ProductPage = (props: IProps) => {
         </title>
       </Head>
       <div>
-        ProductPage ID: -{" "}
-        {productData?.hits?.hits?.[0]?._source?.original_sku_name}
-        <ProductPageModule />
+        {/* ProductPage ID: -{" "}
+        {productData?.hits?.hits?.[0]?._source?.original_sku_name} */}
+        <ProductPageModule
+          productData={productData}
+          fetchMedicineDetails={fetchMedicineDetails}
+          getOtherProducts={getOtherProducts}
+        />
       </div>
     </>
   );
