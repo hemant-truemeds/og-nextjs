@@ -47,7 +47,8 @@
       .imgSliderWrapper {
         width: 50%;
         height: 400px;
-        background-color: lightblue;
+        border: 1px solid rgb(226, 236, 244);
+        border-radius: 0.75rem;
         @media screen and (max-width: 768px) {
           width: 100%;
         }
@@ -58,6 +59,89 @@
         background-color: lightcyan;
         @media screen and (max-width: 768px) {
           width: 100%;
+        }
+        .firstTitleSection {
+          .medName {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            letter-spacing: 0px;
+            color: rgb(79, 88, 94);
+            padding: 0px;
+            margin-bottom: 14px;
+          }
+          .medCompany {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0px;
+            color: rgb(108, 119, 137);
+            margin-bottom: 14px;
+          }
+          .medStrips {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0px;
+            color: rgb(79, 88, 94);
+            margin-bottom: 16px;
+          }
+          .priceDistributionWrapper {
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 2px;
+            .medSelling {
+              margin: 0px 8px 0px 0px;
+              font-size: 20px;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0.02em;
+              color: rgb(64, 70, 77);
+            }
+            .medMrp {
+              margin: 0px 8px 0px 0px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 22px;
+              letter-spacing: 0.02em;
+              color: rgb(108, 119, 137);
+            }
+            .medDiscount {
+              margin: 0px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 22px;
+              letter-spacing: 0.02em;
+              color: rgb(23, 135, 85);
+            }
+          }
+          .buttonAnddropDownWrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            .addToCartButton {
+              font-weight: 600;
+              font-size: 16px;
+              background-color: rgb(0, 113, 188);
+              border-radius: 6px;
+              color: rgb(255, 255, 255);
+              width: 154px;
+              height: 36px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              white-space: nowrap;
+              cursor: pointer;
+              border: none;
+            }
+            .dustbinWrapper {
+              margin-left: 1rem;
+              position: relative;
+              width: 1.7rem;
+              height: 1.7rem;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
