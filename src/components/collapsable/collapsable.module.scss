@@ -1,0 +1,44 @@
+.collapsableWrapper {
+  color: rgb(79, 88, 94);
+  border-bottom: 1px solid rgb(226, 236, 244) !important;
+  .collapsableInner {
+    padding: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0px;
+      color: rgb(79, 88, 94);
+    }
+    .arrow {
+      padding: 0 1rem;
+      border: none;
+      &::after {
+        content: "\f104";
+        font-family: "FontAwesome";
+        font-size: 1rem;
+        color: inherit;
+      }
+      &.open {
+        transform: rotate(270deg);
+      }
+      &.close {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .paragraph {
+    transition: all 2s linear;
+    & > div {
+      transition: all 2s linear;
+    }
+    .paraInnner {
+      padding: 0.625rem;
+      transition: all 2s linear;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+}
