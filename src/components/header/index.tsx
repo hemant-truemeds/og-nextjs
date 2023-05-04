@@ -6,6 +6,7 @@ import Logo from "@components/logo";
 import SearchBar from "@components/SearchBar";
 import styles from "./header.module.scss";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IProps {
   showSearchBar?: boolean;
@@ -13,15 +14,16 @@ interface IProps {
 
 export const Header: React.FC<IProps> = (props) => {
   const { showSearchBar = false } = props;
+  const router = useRouter();
 
   return (
     <div className={styles.header}>
-      <div className={styles.img_wapper}>
-        <Link href="/">
+      <div onClick={() => router.push("/")} className={styles.img_wapper}>
+        <Logo />
+        {/* <Link href="/">
           <a>
-            <Logo />
           </a>
-        </Link>
+        </Link> */}
       </div>
       {showSearchBar ? <SearchBar /> : null}
       <ul
