@@ -64,9 +64,9 @@ const MainSection: React.FC<IProps> = (props) => {
                     <SwiperSlide key={item}>
                       <div className={styles.unsetImage}>
                         <Image
-                          {...([0, 1].includes(index)
-                            ? { priority: true }
-                            : { loading: "lazy" })}
+                          //   {...([0, 1].includes(index)
+                          //     ? { priority: true }
+                          //     : { loading: "lazy" })}
                           width="700"
                           height="400"
                           objectFit="contain"
