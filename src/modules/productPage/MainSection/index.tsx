@@ -6,6 +6,7 @@ import DropDown from "@components/dropdown";
 import { staticValue } from "@constants/PdDropdown";
 import dustbinSvg from "@images/dustbin.svg";
 import styles from "./mainSection.module.scss";
+import Composition from "./composition";
 
 interface IProps {
   productData: any;
@@ -21,6 +22,7 @@ const MainSection: React.FC<IProps> = (props) => {
     subs_base_discount = "",
     subs_mrp = "",
     subs_selling_price = "",
+    original_composition = "",
   } = productData?.hits?.hits?.[0]?._source || {};
   const [items] = useState<{ label: string; value: string }[]>(staticValue);
   const [value, setValue] = useState<string | undefined>();
@@ -89,6 +91,7 @@ const MainSection: React.FC<IProps> = (props) => {
                   </>
                 )}
               </div>
+              <Composition original_composition={original_composition} />
             </div>
           </div>
         </div>

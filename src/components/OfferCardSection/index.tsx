@@ -24,7 +24,7 @@ const OfferCardSection = (props: IProps) => {
           product_image_urls,
         } = item?._source;
         return (
-          <ErrorBoundary>
+          <ErrorBoundary key={original_sku_name}>
             <OfferCard
               discount={Math.ceil(
                 ((original_mrp - original_pts) / original_pts) * 100
