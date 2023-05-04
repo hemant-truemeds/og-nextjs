@@ -67,13 +67,13 @@ const MainSection: React.FC<IProps> = (props) => {
                           //   {...([0, 1].includes(index)
                           //     ? { priority: true }
                           //     : { loading: "lazy" })}
-                          width="700"
-                          height="400"
+                          width="300"
+                          height="200"
                           objectFit="contain"
                           className={styles.customImage}
                           src={item}
                           alt=""
-                          // width={500}
+                          // width={3}
                           // height={300}
                         />
                       </div>
