@@ -10,10 +10,16 @@ interface IProps {
   open?: boolean;
   title: string;
   description: string;
+  nestedTitle?: string;
 }
 
-const Collapsible: React.FC<IProps> = ({ open, title, description }) => {
-  const [isOpen, setIsOpen] = useState(open);
+const Collapsible: React.FC<IProps> = ({
+  open = false,
+  title = "",
+  description = "",
+  nestedTitle = "",
+}) => {
+  const [isOpen, setIsOpen] = useState<boolean>(open);
 
   const handleFilterOpening = () => {
     setIsOpen((prev) => !prev);
@@ -23,7 +29,7 @@ const Collapsible: React.FC<IProps> = ({ open, title, description }) => {
     <>
       <div className={styles.collapsableWrapper}>
         <div onClick={handleFilterOpening} className={styles.collapsableInner}>
-          <h6 className={styles.title}>{title}</h6>
+          <h3 className={styles.title}>{title}</h3>
           <div
             className={`${styles.arrow} ${
               !isOpen ? styles.open : styles.close
@@ -31,9 +37,14 @@ const Collapsible: React.FC<IProps> = ({ open, title, description }) => {
           ></div>
         </div>
         <div className={styles.paragraph}>
-          <div>
-            {isOpen && <div className={styles.paraInnner}>{description}</div>}
-          </div>
+          {isOpen ? (
+            <div>
+              {nestedTitle ? (
+                <h4 className={styles.nestedTitle}>{nestedTitle}</h4>
+              ) : null}
+              <p className={styles.paraInnner}>{description}</p>
+            </div>
+          ) : null}
         </div>
       </div>
     </>

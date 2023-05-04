@@ -35,6 +35,15 @@
     & > div {
       transition: all 2s linear;
     }
+    .nestedTitle {
+      margin: 0;
+      padding: 0.625rem;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: inherit;
+      margin-bottom: 10px;
+      color: rgb(79, 88, 94);
+    }
     .paraInnner {
       padding: 0.625rem;
       transition: all 2s linear;
