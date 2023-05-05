@@ -6,7 +6,7 @@ module.exports = withPlugins([], {
   },
   experimental: {
     largePageDataBytes: 500 * 1000,
-    // concurrentFeatures: true,
+    concurrentFeatures: true,
   },
   i18n: {
     locales: ["en"],
