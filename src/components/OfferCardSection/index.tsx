@@ -22,6 +22,7 @@ const OfferCardSection = (props: IProps) => {
           original_pts,
           original_sku_name,
           product_image_urls,
+          original_product_code,
         } = item?._source;
         return (
           <ErrorBoundary key={original_sku_name}>
@@ -30,6 +31,7 @@ const OfferCardSection = (props: IProps) => {
                 ((original_mrp - original_pts) / original_pts) * 100
               )}
               key={item?._id}
+              product_code={original_product_code}
               mrp={original_mrp}
               price={original_pts}
               name={original_sku_name}

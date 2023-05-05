@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./card.module.scss";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/router";
 
 interface IProps {
   img_url: StaticImageData | string;
@@ -8,13 +9,19 @@ interface IProps {
   price: number;
   mrp: number;
   discount: number;
+  product_code: string;
 }
 
 const OfferCard = (props: IProps) => {
-  const { img_url, name, price, mrp, discount } = props;
+  const { img_url, name = "", price, mrp, discount, product_code } = props;
+  const router = useRouter();
+
+  const handleRouteClick = () => {
+    router.push(`/medicine/${name.split(" ").join("-")}${product_code}`);
+  };
 
   return (
-    <div className={styles.offerCardWrapper}>
+    <div onClick={() => handleRouteClick()} className={styles.offerCardWrapper}>
       <div className={styles.cardContainer}>
         <div className={styles.imgWrapper}>
           <Image
