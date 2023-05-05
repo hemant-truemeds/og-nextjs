@@ -1,6 +1,6 @@
 import axios from "axios";
 
-enum Base_URLS {
+export enum Base_URLS {
   BASE_URL = "https://nal.tmmumbai.in/",
   WP_ARTICLES = "https://article.truemedsblog.in/",
 }

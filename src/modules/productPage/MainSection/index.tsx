@@ -10,7 +10,8 @@ import Composition from "./composition";
 import Collapsible from "@components/collapsable";
 import {
   ICollapsibleConstant,
-  collapsibleConstant,
+  // collapsibleConstant,
+  getCollapsableData,
 } from "@constants/collapsableConstant";
 import DoctorList from "./doctorList";
 
@@ -30,6 +31,7 @@ const MainSection: React.FC<IProps> = (props) => {
     subs_mrp = "",
     subs_selling_price = "",
     original_composition = "",
+    original_mrp = "",
   } = productData?.hits?.hits?.[0]?._source || {};
   const [items] = useState<{ label: string; value: string }[]>(staticValue);
   const [value, setValue] = useState<string | undefined>();
@@ -65,7 +67,10 @@ const MainSection: React.FC<IProps> = (props) => {
               </p>
               <div className={`${styles.priceDistributionWrapper} hideMob`}>
                 <p className={styles.medSelling}>
-                  ₹{parseFloat(subs_selling_price || 0).toFixed(2)}
+                  ₹
+                  {parseFloat(original_mrp || subs_selling_price || 0).toFixed(
+                    2
+                  )}
                 </p>
                 <p className={styles.medMrp}>
                   MRP <del>₹{subs_mrp}</del>
@@ -100,18 +105,19 @@ const MainSection: React.FC<IProps> = (props) => {
               </div>
               <Composition original_composition={original_composition} />
               <div className={styles.collapsableContainer}>
-                {collapsibleConstant.map(
-                  (item: ICollapsibleConstant, index: number) => {
-                    return (
-                      <Collapsible
-                        key={index}
-                        title={item.title}
-                        description={item.description}
-                        nestedTitle={item.nestedTitle}
-                      />
-                    );
-                  }
-                )}
+                {getCollapsableData(
+                  original_sku_name,
+                  fetchMedicineDetails?.MedicineDetails
+                )?.map((item: ICollapsibleConstant, index: number) => {
+                  return (
+                    <Collapsible
+                      key={index}
+                      title={item.title}
+                      description={item.description}
+                      nestedTitle={item.nestedTitle}
+                    />
+                  );
+                })}
               </div>
               <div className={styles.doctorListWrapper}>
                 <h3 className={styles.doctorListTitle}>Certified Content</h3>
