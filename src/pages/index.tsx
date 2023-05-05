@@ -32,7 +32,7 @@ const Home: React.FC<IHomePage> = (props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const {
       bannerData = {},
