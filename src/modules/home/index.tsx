@@ -2,33 +2,33 @@ import dynamic from "next/dynamic";
 import OfferCardSection from "@components/OfferCardSection";
 import { Header } from "@components/header";
 // import SkeletonCustom from "@components/skeletonEffect";
-// import Footer from "@components/footer";
-// import ContactUs from "@components/ContactUs";
-// import SecondHeaderSection from "@components/SecondHeaderSection/SecondHeaderSection";
-// import SliderComponents from "@components/sliderComponent";
-// import ArticleCards from "@components/articleCard";
+import Footer from "@components/footer";
+import ContactUs from "@components/ContactUs";
+import SecondHeaderSection from "@components/SecondHeaderSection";
+import SliderComponents from "@components/sliderComponent";
+import ArticleCards from "@components/articleCard";
 
-const DynamicSecondHeaderSection = dynamic(
-  () => import("@components/SecondHeaderSection"),
-  {
-    loading: () => <p>Loading...</p>,
-  }
-);
-const DynamicSliderComponents = dynamic(
-  () => import("@components/sliderComponent"),
-  {
-    loading: () => <p>Loading...</p>,
-  }
-);
-const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
-  loading: () => <p>Loading...</p>,
-});
-const DynamicFooter = dynamic(() => import("@components/footer"), {
-  loading: () => <p>Loading...</p>,
-});
-const DynamicContactus = dynamic(() => import("@components/ContactUs"), {
-  loading: () => <p>Loading...</p>,
-});
+// const DynamicSecondHeaderSection = dynamic(
+//   () => import("@components/SecondHeaderSection"),
+//   {
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
+// const DynamicSliderComponents = dynamic(
+//   () => import("@components/sliderComponent"),
+//   {
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
+// const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
+//   loading: () => <p>Loading...</p>,
+// });
+// const DynamicFooter = dynamic(() => import("@components/footer"), {
+//   loading: () => <p>Loading...</p>,
+// });
+// const DynamicContactus = dynamic(() => import("@components/ContactUs"), {
+//   loading: () => <p>Loading...</p>,
+// });
 import Head from "next/head";
 import React from "react";
 import { IHomePage } from "src/pages";
@@ -51,12 +51,12 @@ const HomeModule: React.FC<IHomePage> = (props) => {
         />
       </Head>
       <Header />
-      <DynamicSecondHeaderSection />
-      <DynamicSliderComponents banners={bannerData?.banners} />
+      <SecondHeaderSection />
+      <SliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
-      <DynamicArticleCards wpArticles={wpArticles} />
-      <DynamicContactus />
-      <DynamicFooter />
+      <ArticleCards wpArticles={wpArticles} />
+      <ContactUs />
+      <Footer />
       {/* <>
         {elastic_search ? (
           <div
