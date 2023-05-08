@@ -1,6 +1,6 @@
 # nextjs with typescript -poc
 
-## Live link: - https://next-poc-theta.vercel.app/
+## Live link: -
 
 ## Github Repo:- https://github.com/hemant-truemeds/next-poc
 
