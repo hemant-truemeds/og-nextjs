@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./composition.module.scss";
 import Image from "next/image";
+import Picture from "@components/picture";
 
 interface IProps {
   original_composition: string;
@@ -12,7 +13,7 @@ const Composition: React.FC<IProps> = (props) => {
     <div className={styles.compositionWrapper}>
       <div className={styles.headSection}>
         <div className={styles.imageWrapper}>
-          <Image
+          <Picture
             layout="fill"
             objectFit="contain"
             src="https://www.truemeds.in/static/media/compositionIcon.84bf1b1d.svg"

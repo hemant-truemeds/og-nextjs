@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./articleCard.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import Picture from "@components/picture";
 
 interface IProps {
   wpArticles: any;
@@ -18,7 +19,7 @@ const ArticleCards = (props: IProps) => {
           return (
             <div key={item?.id} className={styles.cardContainer}>
               <div className={styles.imageWrapper}>
-                <Image
+                <Picture
                   className={styles.image}
                   objectFit="contain"
                   loading="lazy"

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./card.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
+import Picture from "@components/picture";
 
 interface IProps {
   img_url: StaticImageData | string;
@@ -24,7 +25,7 @@ const OfferCard = (props: IProps) => {
     <div onClick={() => handleRouteClick()} className={styles.offerCardWrapper}>
       <div className={styles.cardContainer}>
         <div className={styles.imgWrapper}>
-          <Image
+          <Picture
             loading="lazy"
             src={
               typeof img_url === "string" ? img_url?.split(",")?.[0] : img_url

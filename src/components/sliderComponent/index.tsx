@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import img4 from "@images/sliderImg4.webp";
 import Image from "next/image";
 import styles from "./slider.module.scss";
+import Picture from "@components/picture";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
@@ -43,7 +44,7 @@ const SliderComponents = (props: IProps) => {
           return (
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
-                <Image
+                <Picture
                   {...([0, 1].includes(index)
                     ? { priority: true }
                     : { loading: "lazy" })}

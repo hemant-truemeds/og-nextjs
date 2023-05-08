@@ -9,6 +9,7 @@ import SwiperCore, {
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./pdSlider.module.scss";
+import Picture from "@components/picture";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
@@ -39,7 +40,7 @@ const PdSlider: React.FC<IProps> = (props) => {
         return (
           <SwiperSlide key={item}>
             <div className={styles.unsetImage}>
-              <Image
+              <Picture
                 priority
                 width="300"
                 height="200"
