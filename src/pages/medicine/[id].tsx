@@ -1,6 +1,8 @@
 import React from "react";
 import { getProductPage } from "@api/apiCalls/productpageApiCalls";
 import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
   GetStaticPaths,
   //   GetStaticPathsContext,
   GetStaticProps,
@@ -54,8 +56,8 @@ const ProductPage = (props: IPdPageProps) => {
 
 export default ProductPage;
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
   const id: any = context.params?.id || "";
 
@@ -79,11 +81,11 @@ export const getStaticProps: GetStaticProps = async (
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () =>
-  //   context: GetStaticPathsContext
-  {
-    return {
-      paths: [{ params: { id: "1" } }, { params: { id: "2" } }],
-      fallback: true,
-    };
-  };
+// export const getStaticPaths: GetStaticPaths = async () =>
+//   //   context: GetStaticPathsContext
+//   {
+//     return {
+//       paths: [{ params: { id: "1" } }, { params: { id: "2" } }],
+//       fallback: true,
+//     };
+//   };
