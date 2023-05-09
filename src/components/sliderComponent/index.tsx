@@ -44,7 +44,7 @@ const SliderComponents = (props: IProps) => {
           return (
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
-                <Picture
+                <Image
                   {...([0, 1].includes(index)
                     ? { priority: true }
                     : { loading: "lazy" })}

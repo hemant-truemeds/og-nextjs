@@ -4,6 +4,7 @@ import styles from "./contactus.module.scss";
 // import Image from "next/image";
 import Link from "next/link";
 import Picture from "@components/picture";
+import Image from "next/image";
 
 const ContactUs = () => {
   return (
@@ -36,7 +37,7 @@ const ContactUs = () => {
           <div className={styles.infoWrapper}>
             <div className={styles.infoItem}>
               <div className={styles.imageWrapper}>
-                <Picture
+                <Image
                   src="https://www.truemeds.in/static/media/mail.5af80c42.svg"
                   alt="mail"
                   // width={50}
@@ -55,7 +56,7 @@ const ContactUs = () => {
             </div>
             <div className={styles.infoItem}>
               <div className={styles.imageWrapper}>
-                <Picture
+                <Image
                   src="https://www.truemeds.in/static/media/call.37d36705.svg"
                   alt="mail"
                   // width={50}

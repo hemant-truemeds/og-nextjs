@@ -25,7 +25,7 @@ const OfferCard = (props: IProps) => {
     <div onClick={() => handleRouteClick()} className={styles.offerCardWrapper}>
       <div className={styles.cardContainer}>
         <div className={styles.imgWrapper}>
-          <Picture
+          <Image
             loading="lazy"
             src={
               typeof img_url === "string" ? img_url?.split(",")?.[0] : img_url

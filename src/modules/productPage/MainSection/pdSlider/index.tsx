@@ -40,7 +40,7 @@ const PdSlider: React.FC<IProps> = (props) => {
         return (
           <SwiperSlide key={item}>
             <div className={styles.unsetImage}>
-              <Picture
+              <Image
                 priority
                 width="300"
                 height="200"
