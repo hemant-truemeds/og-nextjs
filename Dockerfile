@@ -20,6 +20,10 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# Install PM2 to manage node processes
+# RUN npm install pm2 --location=global
+RUN npm install --global pm2
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
@@ -34,4 +38,5 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+CMD [ "pm2-runtime", "start", "npm", "--", "start" ]
