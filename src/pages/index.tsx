@@ -19,7 +19,7 @@ const Home: React.FC<IHomePage> = (props) => {
     getDeliveryCharges,
     mobileMaster,
   } = props;
-  // console.log(props);
+  console.log(props);
 
   return (
     <HomeModule
