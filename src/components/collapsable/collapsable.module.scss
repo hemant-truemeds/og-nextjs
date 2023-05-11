@@ -35,6 +35,11 @@
     & > div {
       transition: all 2s linear;
     }
+    .heightZero {
+      height: 0 !important;
+      visibility: 0;
+      display: none;
+    }
     .nestedTitle {
       margin: 0;
       padding: 0.625rem;

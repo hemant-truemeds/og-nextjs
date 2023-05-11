@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./card.module.scss";
 import Image, { StaticImageData } from "next/image";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { ROOT_URL } from "@constants/Routes";
 
@@ -16,28 +16,26 @@ interface IProps {
 
 const OfferCard = (props: IProps) => {
   const { img_url, name = "", price, mrp, discount, product_code } = props;
-  // const router = useRouter();
+  const router = useRouter();
 
   const navigate_url = `medicine/${name
     .split(" ")
     .join("-")
     .toLowerCase()}${product_code.toLowerCase()}`;
-  // const handleRouteClick = () => {
-  //   router.push(
-  //     `/medicine/${name
-  //       .split(" ")
-  //       .join("-")
-  //       .toLowerCase()}${product_code.toLowerCase()}`
-  //   );
-  // };
+
+  const handleRouteClick = () => {
+    router.push(
+      `/medicine/${name
+        .split(" ")
+        .join("-")
+        .toLowerCase()}${product_code.toLowerCase()}`
+    );
+  };
 
   return (
-    <div
-      // onClick={() => handleRouteClick()}
-      className={styles.offerCardWrapper}
-    >
+    <div onClick={() => handleRouteClick()} className={styles.offerCardWrapper}>
       <Link as={`${ROOT_URL}${navigate_url}`} href={navigate_url}>
-        <a>
+        <a onClick={(e) => e.preventDefault()}>
           <div className={styles.cardContainer}>
             <div className={styles.imgWrapper}>
               <Image
