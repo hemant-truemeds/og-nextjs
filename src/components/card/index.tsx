@@ -32,7 +32,7 @@ const OfferCard = (props: IProps) => {
             width={100}
             height={100}
             objectFit="contain"
-            alt=""
+            alt={name}
           />
         </div>
         <h2 className={styles.productTitle}>{name}</h2>

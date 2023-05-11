@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import SwiperCore, {
   EffectCoverflow,
@@ -19,8 +19,8 @@ interface IProps {
 const PdSlider: React.FC<IProps> = (props) => {
   const { product_image_urls } = props;
 
-  const prevNavRef = useRef(null);
-  const nextNavRef = useRef(null);
+  // const prevNavRef = useRef(null);
+  // const nextNavRef = useRef(null);
   return (
     <Swiper
       grabCursor={true}
@@ -29,10 +29,11 @@ const PdSlider: React.FC<IProps> = (props) => {
       //   scrollbar={{ draggable: true }}
       keyboard={true}
       loop
-      navigation={{
-        prevEl: prevNavRef.current,
-        nextEl: nextNavRef.current,
-      }}
+      navigation
+      // navigation={{
+      //   prevEl: prevNavRef.current,
+      //   nextEl: nextNavRef.current,
+      // }}
       modules={[Navigation, A11y, Keyboard]}
     >
       {product_image_urls?.split(",")?.map((item: any, index: number) => {
@@ -52,14 +53,14 @@ const PdSlider: React.FC<IProps> = (props) => {
           </SwiperSlide>
         );
       })}
-      <div
+      {/* <div
         ref={prevNavRef}
         className={`swiper-button-prev ${styles.prevButton}`}
       ></div>
       <div
         ref={nextNavRef}
         className={`swiper-button-next ${styles.nextButton}`}
-      ></div>
+      ></div> */}
     </Swiper>
   );
 };

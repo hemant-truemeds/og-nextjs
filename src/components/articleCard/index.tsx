@@ -25,7 +25,7 @@ const ArticleCards = (props: IProps) => {
                   width={600}
                   height={260}
                   src={item?.yoast_head_json?.og_image?.[0]?.url}
-                  alt=""
+                  alt="wp article image"
                 />
               </div>
               <div className={styles.description}>

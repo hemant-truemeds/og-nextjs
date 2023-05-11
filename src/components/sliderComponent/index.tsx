@@ -52,7 +52,7 @@ const SliderComponents = (props: IProps) => {
                   objectFit="contain"
                   className={styles.customImage}
                   src={item?.image}
-                  alt=""
+                  alt={item?.description}
                   // width={500}
                   // height={300}
                 />

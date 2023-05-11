@@ -97,7 +97,7 @@ const MainSection: React.FC<IProps> = (props) => {
                         layout="fill"
                         objectFit="contain"
                         src={dustbinSvg}
-                        alt=""
+                        alt="dust bin image"
                       />
                     </div>
                   </>

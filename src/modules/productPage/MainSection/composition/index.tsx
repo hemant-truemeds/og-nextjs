@@ -16,7 +16,7 @@ const Composition: React.FC<IProps> = (props) => {
             layout="fill"
             objectFit="contain"
             src="https://www.truemeds.in/static/media/compositionIcon.84bf1b1d.svg"
-            alt=""
+            alt="composition"
           />
         </div>
         <h3 className={styles.compositionTitile}>Composition</h3>
