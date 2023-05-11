@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import img4 from "@images/sliderImg4.webp";
 import Image from "next/image";
 import styles from "./slider.module.scss";
+import { replaceImgUrl } from "@constants/functionsConstants";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
@@ -51,7 +52,7 @@ const SliderComponents = (props: IProps) => {
                   height="400"
                   objectFit="contain"
                   className={styles.customImage}
-                  src={item?.image}
+                  src={replaceImgUrl(item?.image)}
                   alt={item?.description}
                   // width={500}
                   // height={300}

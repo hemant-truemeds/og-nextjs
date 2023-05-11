@@ -47,7 +47,7 @@ const PdSlider: React.FC<IProps> = (props) => {
                 objectFit="contain"
                 className={styles.customImage}
                 src={item}
-                alt=""
+                alt="slider image"
               />
             </div>
           </SwiperSlide>

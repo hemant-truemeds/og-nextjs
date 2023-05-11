@@ -3,6 +3,7 @@ import styles from "./articleCard.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import { ROOT_URL } from "@constants/Routes";
+import { replaceImgUrl } from "@constants/functionsConstants";
 
 interface IProps {
   wpArticles: any;
@@ -25,7 +26,7 @@ const ArticleCards = (props: IProps) => {
                   loading="lazy"
                   width={600}
                   height={260}
-                  src={item?.yoast_head_json?.og_image?.[0]?.url}
+                  src={replaceImgUrl(item?.yoast_head_json?.og_image?.[0]?.url)}
                   alt="wp article image"
                 />
               </div>

@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { ROOT_URL } from "@constants/Routes";
+import { replaceImgUrl } from "@constants/functionsConstants";
 
 interface IProps {
   img_url: StaticImageData | string;
@@ -42,7 +43,7 @@ const OfferCard = (props: IProps) => {
                 loading="lazy"
                 src={
                   typeof img_url === "string"
-                    ? img_url?.split(",")?.[0]
+                    ? replaceImgUrl(img_url?.split(",")?.[0])
                     : img_url
                 }
                 width={100}

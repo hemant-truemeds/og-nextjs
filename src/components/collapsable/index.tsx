@@ -5,6 +5,7 @@ import React, { useState } from "react";
 //   faChevronDown
 // } from "@fortawesome/fontawesome-free-solid";
 import styles from "./collapsable.module.scss";
+import { removePtag } from "@constants/functionsConstants";
 
 interface IProps {
   open?: boolean;
@@ -41,9 +42,9 @@ const Collapsible: React.FC<IProps> = ({
             {nestedTitle ? (
               <h4 className={styles.nestedTitle}>{nestedTitle}</h4>
             ) : null}
-            {console.log(description)}
+            {/* {console.log(description)} */}
             <p
-              dangerouslySetInnerHTML={{ __html: description }}
+              dangerouslySetInnerHTML={{ __html: removePtag(description) }}
               className={`${styles.paraInnner}`}
             />
           </div>
