@@ -49,6 +49,12 @@ const HomeModule: React.FC<IHomePage> = (props) => {
           name="description"
           content="Looking for the best medicine half price? Look no further than Truemeds. We offer the best quality at the best prices, so you can save money and feel better."
         />
+        <link
+          rel="canonical"
+          href={`https://www.truemeds.in/option/mysubstitute/info`}
+        />
+        <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
+        <meta name="robots" content="all" />
       </Head>
       <Header />
       <DynamicSecondHeaderSection />

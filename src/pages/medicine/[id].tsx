@@ -36,6 +36,12 @@ const ProductPage = (props: IPdPageProps) => {
           href="/icons/favicon.png"
           type="image/x-icon"
         />
+        <link
+          rel="canonical"
+          href={`https://www.truemeds.in/option/mysubstitute/info`}
+        />
+        <meta name="robots" content="all" />
+        <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
         <title>
           {productData?.hits?.hits?.[0]?._source?.original_sku_name ||
             "Truemeds"}

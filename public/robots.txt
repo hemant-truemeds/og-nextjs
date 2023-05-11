@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /orderflow
+Disallow: /helpwithmyorder
+Disallow: /ticketdetails
+Disallow: /raiseissue
+Disallow: /order/status
+Disallow: /myprofile
+Disallow: /option/mysubstitute
+Disallow: /option/mysubstitute/info
+Disallow: /mobilenavigation
+Disallow: /scratch-coupon
+Disallow: /login
+Disallow: /manage-patients
+Disallow: /manage-address
+Disallow: /callscheduling
+sitemap: https://www.truemeds.in/sitemap.xml
