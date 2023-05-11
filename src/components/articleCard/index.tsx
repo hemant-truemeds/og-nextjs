@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./articleCard.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { ROOT_URL } from "@constants/Routes";
 
 interface IProps {
   wpArticles: any;
@@ -29,7 +30,7 @@ const ArticleCards = (props: IProps) => {
                 />
               </div>
               <div className={styles.description}>
-                <Link href={"/"}>
+                <Link as={ROOT_URL} href={"/"}>
                   <a className={styles.imageTitle}>{item?.title?.rendered}</a>
                 </Link>
                 <p className={styles.readMore}>Read more</p>

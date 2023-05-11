@@ -3,8 +3,7 @@ import styles from "./card.module.scss";
 import Image, { StaticImageData } from "next/image";
 // import { useRouter } from "next/router";
 import Link from "next/link";
-
-const BASE_URL = "http://65.0.26.92:3000/";
+import { ROOT_URL } from "@constants/Routes";
 
 interface IProps {
   img_url: StaticImageData | string;
@@ -37,7 +36,7 @@ const OfferCard = (props: IProps) => {
       // onClick={() => handleRouteClick()}
       className={styles.offerCardWrapper}
     >
-      <Link as={`${BASE_URL}${navigate_url}`} href={navigate_url}>
+      <Link as={`${ROOT_URL}${navigate_url}`} href={navigate_url}>
         <a>
           <div className={styles.cardContainer}>
             <div className={styles.imgWrapper}>

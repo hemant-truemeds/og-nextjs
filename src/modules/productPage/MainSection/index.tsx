@@ -14,6 +14,7 @@ import {
   getCollapsableData,
 } from "@constants/collapsableConstant";
 import DoctorList from "./doctorList";
+import { ROOT_URL } from "@constants/Routes";
 
 interface IProps {
   productData: any;
@@ -43,7 +44,7 @@ const MainSection: React.FC<IProps> = (props) => {
         <div className={styles.breadcrumb}>
           <span>
             <span className={styles.breadcrumbLink}>
-              <Link href="/">
+              <Link as={ROOT_URL} href="/">
                 <a>Home</a>
               </Link>
             </span>
