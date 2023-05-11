@@ -37,7 +37,7 @@ const OfferCard = (props: IProps) => {
       // onClick={() => handleRouteClick()}
       className={styles.offerCardWrapper}
     >
-      <Link as={`${BASE_URL}/${navigate_url}`} href={navigate_url}>
+      <Link as={`${BASE_URL}${navigate_url}`} href={navigate_url}>
         <a>
           <div className={styles.cardContainer}>
             <div className={styles.imgWrapper}>
