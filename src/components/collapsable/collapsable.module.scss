@@ -35,10 +35,29 @@
     & > div {
       transition: all 2s linear;
     }
+    li {
+      margin-left: 2rem;
+    }
+    h2 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: inherit;
+      margin-bottom: 10px;
+      color: rgb(79, 88, 94);
+    }
+    h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: inherit;
+      margin-bottom: 10px;
+      color: rgb(79, 88, 94);
+    }
     .heightZero {
       height: 0 !important;
       visibility: 0;
       display: none;
+      transition: all 2s linear;
     }
     .nestedTitle {
       margin: 0;
@@ -49,9 +68,9 @@
       margin-bottom: 10px;
       color: rgb(79, 88, 94);
     }
-    .paraInnner {
+    p {
       padding: 0.625rem;
-      transition: all 2s linear;
+      transition: all 0.3s linear;
       color: rgba(0, 0, 0, 0.87);
     }
   }

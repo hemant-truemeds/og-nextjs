@@ -39,14 +39,8 @@ const Collapsible: React.FC<IProps> = ({
         </div>
         <div className={styles.paragraph}>
           <div className={`${isOpen ? styles.heightZero : null}`}>
-            {nestedTitle ? (
-              <h4 className={styles.nestedTitle}>{nestedTitle}</h4>
-            ) : null}
-            {/* {console.log(description)} */}
-            <div
-              dangerouslySetInnerHTML={{ __html: removePtag(description) }}
-            />
-            {/* <p className={`${styles.paraInnner}`} /> */}
+            <h4 className={styles.nestedTitle}>{nestedTitle || ""}</h4>
+            <div dangerouslySetInnerHTML={{ __html: description }} />
           </div>
         </div>
       </div>

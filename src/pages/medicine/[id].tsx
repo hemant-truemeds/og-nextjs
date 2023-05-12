@@ -63,7 +63,8 @@ export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
   const id: any = context.params?.id || "";
-  const abosoluteUrl = context?.req?.headers?.referer;
+  const { resolvedUrl } = context;
+  const abosoluteUrl = `${process.env.ROOT_HOST}${resolvedUrl}`;
 
   const pdCode: string = id
     .toUpperCase()
