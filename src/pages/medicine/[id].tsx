@@ -17,10 +17,11 @@ export interface IPdPageProps {
   productData: any;
   fetchMedicineDetails: any;
   getOtherProducts: any;
+  abosoluteUrl: string;
 }
 
 const ProductPage = (props: IPdPageProps) => {
-  const { productData, fetchMedicineDetails, getOtherProducts } = props;
+  const { fetchMedicineDetails, abosoluteUrl } = props;
 
   console.log(props);
 
@@ -42,10 +43,7 @@ const ProductPage = (props: IPdPageProps) => {
           href="/icons/favicon.png"
           type="image/x-icon"
         />
-        <link
-          rel="canonical"
-          href={`https://www.truemeds.in/option/mysubstitute/info`}
-        />
+        <link rel="canonical" href={abosoluteUrl} />
         <meta name="robots" content="all" />
         <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
         <title>{fetchMedicineDetails?.MedicineDetails?.recommendedTitle}</title>
@@ -53,11 +51,7 @@ const ProductPage = (props: IPdPageProps) => {
       <div>
         {/* ProductPage ID: -{" "}
         {productData?.hits?.hits?.[0]?._source?.original_sku_name} */}
-        <ProductPageModule
-          productData={productData}
-          fetchMedicineDetails={fetchMedicineDetails}
-          getOtherProducts={getOtherProducts}
-        />
+        <ProductPageModule {...props} />
       </div>
     </>
   );
@@ -69,6 +63,7 @@ export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
   const id: any = context.params?.id || "";
+  const abosoluteUrl = context?.req?.headers?.referer;
 
   const pdCode: string = id
     .toUpperCase()
@@ -86,6 +81,7 @@ export const getServerSideProps: GetServerSideProps = async (
       productData: GET_PRODUCT_DETAILS,
       fetchMedicineDetails: FETCH_MEDICINE_DETAILS,
       getOtherProducts: GET_OTHER_PRODUCTS,
+      abosoluteUrl: abosoluteUrl,
     },
   };
 };
