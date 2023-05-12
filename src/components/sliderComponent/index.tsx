@@ -42,6 +42,7 @@ const SliderComponents = (props: IProps) => {
         modules={[Navigation, Pagination, A11y, Keyboard]}
       >
         {banners?.map((item: any, index: number) => {
+          // console.log(replaceImgUrl(item?.image));
           return (
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
@@ -51,7 +52,7 @@ const SliderComponents = (props: IProps) => {
                   height="400"
                   objectFit="contain"
                   className={styles.customImage}
-                  src={replaceImgUrl(item?.image)}
+                  src={item?.image}
                   alt={item?.description}
                   // width={500}
                   // height={300}

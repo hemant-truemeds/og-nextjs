@@ -27,7 +27,7 @@ const ArticleCards = (props: IProps) => {
                   loading="lazy"
                   width={600}
                   height={260}
-                  src={replaceImgUrl(item?.yoast_head_json?.og_image?.[0]?.url)}
+                  src={item?.yoast_head_json?.og_image?.[0]?.url}
                   alt="wp article image"
                 />
               </div>
