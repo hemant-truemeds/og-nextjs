@@ -8,9 +8,10 @@ const CustomImage: React.FC<ImageProps> = (props) => {
       {...rest}
       src={src}
       alt={alt}
-      loader={({ src, width, quality }) =>
-        `https://example.com/${src}?w=${width}&q=${quality || 75}`
-      }
+      loader={({ src, width, quality }) => {
+        // console.log(`${src}`);
+        return `${src}?w=${width}&q=${quality}`;
+      }}
     />
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import logoPng from "@images/TrueLogo.png";
+import CustomImage from "@components/CutstomImage";
 
 const Logo: React.FC = () => {
   return (
-    <Image
+    <CustomImage
       priority
       layout="fill"
       objectFit="contain"

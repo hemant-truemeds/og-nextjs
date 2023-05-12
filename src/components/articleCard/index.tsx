@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ROOT_URL } from "@constants/Routes";
 import { replaceImgUrl } from "@constants/functionsConstants";
+import CustomImage from "@components/CutstomImage";
 
 interface IProps {
   wpArticles: any;
@@ -20,7 +21,7 @@ const ArticleCards = (props: IProps) => {
           return (
             <div key={item?.id} className={styles.cardContainer}>
               <div className={styles.imageWrapper}>
-                <Image
+                <CustomImage
                   className={styles.image}
                   objectFit="contain"
                   loading="lazy"

@@ -34,7 +34,7 @@ import React from "react";
 import { IHomePage } from "src/pages";
 
 const HomeModule: React.FC<IHomePage> = (props) => {
-  const { elastic_search, bannerData, wpArticles } = props;
+  const { elastic_search, bannerData, wpArticles, abosoluteUrl } = props;
   // console.log({ props });
   return (
     <>
@@ -49,10 +49,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
           name="description"
           content="Looking for the best medicine half price? Look no further than Truemeds. We offer the best quality at the best prices, so you can save money and feel better."
         />
-        <link
-          rel="canonical"
-          href={`https://www.truemeds.in/option/mysubstitute/info`}
-        />
+        <link rel="canonical" href={abosoluteUrl} />
         <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
         <meta name="robots" content="all" />
       </Head>

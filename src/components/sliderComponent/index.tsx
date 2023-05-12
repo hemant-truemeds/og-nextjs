@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import styles from "./slider.module.scss";
 import { replaceImgUrl } from "@constants/functionsConstants";
+import CustomImage from "@components/CutstomImage";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
@@ -44,10 +45,8 @@ const SliderComponents = (props: IProps) => {
           return (
             <SwiperSlide key={item?.id}>
               <div className={styles.unsetImage}>
-                <Image
-                  {...([0, 1].includes(index)
-                    ? { priority: true }
-                    : { loading: "lazy" })}
+                <CustomImage
+                  {...(index === 0 ? { priority: true } : { loading: "lazy" })}
                   width="700"
                   height="400"
                   objectFit="contain"

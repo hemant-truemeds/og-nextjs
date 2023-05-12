@@ -46,7 +46,12 @@ const ProductPage = (props: IPdPageProps) => {
         <link rel="canonical" href={abosoluteUrl} />
         <meta name="robots" content="all" />
         <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
-        <title>{fetchMedicineDetails?.MedicineDetails?.recommendedTitle}</title>
+        <title>
+          {fetchMedicineDetails?.MedicineDetails?.recommendedTitle?.replace(
+            "#alternateMedicineName2",
+            fetchMedicineDetails?.MedicineDetails?.alternateMedicineName2
+          )}
+        </title>
       </Head>
       <div>
         {/* ProductPage ID: -{" "}

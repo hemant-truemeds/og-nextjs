@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { ROOT_URL } from "@constants/Routes";
 import { replaceImgUrl } from "@constants/functionsConstants";
+import CustomImage from "@components/CutstomImage";
 
 interface IProps {
   img_url: StaticImageData | string;
@@ -39,11 +40,11 @@ const OfferCard = (props: IProps) => {
         <a onClick={(e) => e.preventDefault()}>
           <div className={styles.cardContainer}>
             <div className={styles.imgWrapper}>
-              <Image
+              <CustomImage
                 loading="lazy"
                 src={
                   typeof img_url === "string"
-                    ? replaceImgUrl(img_url?.split(",")?.[0])
+                    ? img_url?.split(",")?.[0]
                     : img_url
                 }
                 width={100}

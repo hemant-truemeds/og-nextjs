@@ -3,6 +3,7 @@ import { IData, STATIC_DATA } from "@constants/truemedsConstant";
 import styles from "./contactus.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import CustomImage from "@components/CutstomImage";
 
 const ContactUs = () => {
   return (
@@ -54,7 +55,7 @@ const ContactUs = () => {
             </div>
             <div className={styles.infoItem}>
               <div className={styles.imageWrapper}>
-                <Image
+                <CustomImage
                   src="https://www.truemeds.in/static/media/call.37d36705.svg"
                   alt="mail"
                   // width={50}
