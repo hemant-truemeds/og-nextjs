@@ -1,7 +1,7 @@
 .swiperModalWrapper {
-  height: 70vh;
+  min-height: 15.625rem;
   @media screen and (max-width: 768px) {
-    height: 40vh;
+    height: 16.125rem;
   }
   // .unsetImage {
   //   width: 100%;

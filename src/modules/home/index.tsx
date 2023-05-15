@@ -5,7 +5,7 @@ import { Header } from "@components/header";
 // import Footer from "@components/footer";
 // import ContactUs from "@components/ContactUs";
 import SecondHeaderSection from "@components/SecondHeaderSection";
-import SliderComponents from "@components/sliderComponent";
+// import SliderComponents from "@components/sliderComponent";
 // import ArticleCards from "@components/articleCard";
 
 // const DynamicSecondHeaderSection = dynamic(
@@ -14,12 +14,13 @@ import SliderComponents from "@components/sliderComponent";
 //     loading: () => <p>Loading...</p>,
 //   }
 // );
-// const DynamicSliderComponents = dynamic(
-//   () => import("@components/sliderComponent"),
-//   {
-//     loading: () => <p>Loading...</p>,
-//   }
-// );
+const DynamicSliderComponents = dynamic(
+  () => import("@components/sliderComponent"),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
 const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
   loading: () => <p>Loading...</p>,
 });
@@ -55,7 +56,7 @@ const HomeModule: React.FC<IHomePage> = (props) => {
       </Head>
       <Header />
       <SecondHeaderSection />
-      <SliderComponents banners={bannerData?.banners} />
+      <DynamicSliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
       <DynamicArticleCards wpArticles={wpArticles} />
       <DynamicContactus />

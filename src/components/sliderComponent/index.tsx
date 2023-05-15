@@ -22,6 +22,13 @@ SwiperCore.use([EffectCoverflow, Pagination]);
 interface IProps {
   banners: any;
 }
+const isMobile = (): number => {
+  if (window && window.innerWidth <= 768) {
+    return 1;
+  } else {
+    return 2;
+  }
+};
 
 const SliderComponents = (props: IProps) => {
   const { banners } = props;
@@ -31,7 +38,7 @@ const SliderComponents = (props: IProps) => {
         grabCursor={true}
         // centeredSlides={true}
         // spaceBetween={20}
-        slidesPerView={2}
+        slidesPerView={isMobile()}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
