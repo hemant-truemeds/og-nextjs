@@ -22,6 +22,23 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         src="https://kit.fontawesome.com/1c4700fdde.js"
         crossOrigin="anonymous"
       />
+      <Script
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `(function (w, d, s, l, i) {
+        setTimeout(()=>{
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        }, 1000)
+      })(window, document, "script", "dataLayer", "GTM-K5D4LGB");`,
+        }}
+      ></Script>
       <ErrorBoundary>
         <Component {...pageProps} />;
       </ErrorBoundary>
