@@ -9,10 +9,10 @@ const CustomImage: React.FC<ImageProps> = (props) => {
       src={src}
       alt={alt}
       loader={({ src, width, quality }) => {
-        const url = `${src}?w=${width}&q=${quality}`;
-        if (url.includes("dwebbanner")) {
-          console.log(url);
-        }
+        const url = `${src}?w=${width}&q=${quality || 75}`;
+        // if (url.includes("dwebbanner")) {
+        //   console.log(url);
+        // }
         return url;
       }}
     />

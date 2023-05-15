@@ -9,6 +9,7 @@ import {
   GetStaticPropsContext,
   PreviewData,
 } from "next";
+import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 import ProductPageModule from "@modules/productPage";
@@ -22,7 +23,13 @@ export interface IPdPageProps {
 
 const ProductPage = (props: IPdPageProps) => {
   const { fetchMedicineDetails, abosoluteUrl } = props;
+  const { asPath } = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
 
+  const URL = `${origin}${asPath}`;
   console.log(props);
 
   return (
@@ -31,7 +38,9 @@ const ProductPage = (props: IPdPageProps) => {
         <meta
           name="description"
           content={
-            fetchMedicineDetails?.MedicineDetails?.recommendedDescription || ""
+            fetchMedicineDetails?.MedicineDetails?.recommendedDescription ||
+            props?.productData?.hits?.hits?.[0]?._source
+              ?.original_product_url_suffix
           }
         />
         {/* <meta
@@ -43,14 +52,14 @@ const ProductPage = (props: IPdPageProps) => {
           href="/icons/favicon.png"
           type="image/x-icon"
         />
-        <link rel="canonical" href={abosoluteUrl} />
+        <link rel="canonical" href={abosoluteUrl || URL} />
         <meta name="robots" content="all" />
         <link rel="alternate" hrefLang="en-us" href="https://truemeds/us/" />
         <title>
           {fetchMedicineDetails?.MedicineDetails?.recommendedTitle?.replace(
             "#alternateMedicineName2",
             fetchMedicineDetails?.MedicineDetails?.alternateMedicineName2
-          )}
+          ) || props?.productData?.hits?.hits?.[0]?._source?.original_sku_name}
         </title>
       </Head>
       <div>
