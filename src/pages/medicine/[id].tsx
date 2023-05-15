@@ -91,6 +91,11 @@ export const getServerSideProps: GetServerSideProps = async (
     GET_OTHER_PRODUCTS = {},
   } = await getProductPage(pdCode as string);
 
+  // console.log(context.res.statusCode);
+  if (!GET_PRODUCT_DETAILS?.hits?.hits?.length) {
+    context.res.statusCode = 404;
+  }
+  // console.log(context.res.statusCode);
   return {
     props: {
       productData: GET_PRODUCT_DETAILS,

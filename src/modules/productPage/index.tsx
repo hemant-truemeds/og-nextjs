@@ -4,6 +4,7 @@ import { Header } from "@components/header";
 import MainSection from "./MainSection";
 import OfferCardSection from "@components/OfferCardSection";
 import Footer from "@components/footer";
+import Soft404 from "@components/soft404";
 import styles from "./productPage.module.scss";
 
 const ProductPageModule = (props: IPdPageProps) => {
@@ -11,10 +12,14 @@ const ProductPageModule = (props: IPdPageProps) => {
   return (
     <div className={styles.pdPageModuleWrapper}>
       <Header showSearchBar />
-      <MainSection
-        productData={productData}
-        fetchMedicineDetails={fetchMedicineDetails}
-      />
+      {productData?.hits?.hits?.length ? (
+        <MainSection
+          productData={productData}
+          fetchMedicineDetails={fetchMedicineDetails}
+        />
+      ) : (
+        <Soft404 />
+      )}
       <OfferCardSection apiCardData={getOtherProducts?.hits?.hits} />
       <Footer />
     </div>
