@@ -4,22 +4,22 @@ import { Header } from "@components/header";
 // import SkeletonCustom from "@components/skeletonEffect";
 // import Footer from "@components/footer";
 // import ContactUs from "@components/ContactUs";
-// import SecondHeaderSection from "@components/SecondHeaderSection/SecondHeaderSection";
-// import SliderComponents from "@components/sliderComponent";
+import SecondHeaderSection from "@components/SecondHeaderSection";
+import SliderComponents from "@components/sliderComponent";
 // import ArticleCards from "@components/articleCard";
 
-const DynamicSecondHeaderSection = dynamic(
-  () => import("@components/SecondHeaderSection"),
-  {
-    loading: () => <p>Loading...</p>,
-  }
-);
-const DynamicSliderComponents = dynamic(
-  () => import("@components/sliderComponent"),
-  {
-    loading: () => <p>Loading...</p>,
-  }
-);
+// const DynamicSecondHeaderSection = dynamic(
+//   () => import("@components/SecondHeaderSection"),
+//   {
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
+// const DynamicSliderComponents = dynamic(
+//   () => import("@components/sliderComponent"),
+//   {
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
 const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
   loading: () => <p>Loading...</p>,
 });
@@ -54,8 +54,8 @@ const HomeModule: React.FC<IHomePage> = (props) => {
         <meta name="robots" content="all" />
       </Head>
       <Header />
-      <DynamicSecondHeaderSection />
-      <DynamicSliderComponents banners={bannerData?.banners} />
+      <SecondHeaderSection />
+      <SliderComponents banners={bannerData?.banners} />
       <OfferCardSection apiCardData={elastic_search?.hits?.hits} />
       <DynamicArticleCards wpArticles={wpArticles} />
       <DynamicContactus />
