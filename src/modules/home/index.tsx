@@ -18,7 +18,6 @@ const DynamicSliderComponents = dynamic(
   () => import("@components/sliderComponent"),
   {
     loading: () => <p>Loading...</p>,
-    ssr: false,
   }
 );
 const DynamicArticleCards = dynamic(() => import("@components/articleCard"), {
