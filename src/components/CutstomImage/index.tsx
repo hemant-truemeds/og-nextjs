@@ -8,8 +8,8 @@ const CustomImage: React.FC<ImageProps> = (props) => {
       {...rest}
       src={src}
       alt={alt}
-      loader={({ src, width, quality }) => {
-        const url = `${src}?w=${width}&q=${quality || 75}`;
+      loader={({ src }) => {
+        const url = `${src}?tr=cm-pad_resize,bg-FFFFFF,lo-true,w-250`;
         // if (url.includes("dwebbanner")) {
         //   console.log(url);
         // }

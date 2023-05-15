@@ -10,6 +10,8 @@ import "swiper/swiper.min.css";
 import "@styles/swiper.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import ErrorBoundary from "@components/ErrorBoundary";
+import { Provider } from "react-redux";
+import { store } from "@redux/store";
 // import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -40,7 +42,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         }}
       ></Script>
       <ErrorBoundary>
-        <Component {...pageProps} />;
+        <Provider store={store}>
+          <Component {...pageProps} />;
+        </Provider>
       </ErrorBoundary>
     </>
   );

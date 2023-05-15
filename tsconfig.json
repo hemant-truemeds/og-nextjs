@@ -55,6 +55,12 @@
       "@images": [
         "src/images"
       ],
+      "@redux/*": [
+        "src/redux/*"
+      ],
+      "@redux": [
+        "src/redux"
+      ],
       "@api/*": [
         "src/api/*"
       ],
