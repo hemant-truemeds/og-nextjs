@@ -1,4 +1,4 @@
-import { AppProps } from "next/app";
+import App, { AppContext, AppProps } from "next/app";
 import Script from "next/script";
 import "@styles/global.css";
 import "swiper/css";
@@ -12,19 +12,34 @@ import "react-loading-skeleton/dist/skeleton.css";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { Provider } from "react-redux";
 import { store } from "@redux/store";
+// import { DocumentContext } from "next/document";
+// import { BrowserDetect } from "@constants/BrowserDetection";
+// import Head from "next/head";
 // import Head from "next/head";
 
+// type TProps = Pick<AppProps, "Component" | "pageProps"> & {
+//   isBrowser: boolean;
+// };
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  // console.log({ isBrowser });
   return (
     <>
+      <link
+        rel="shortcut icon"
+        href="public/icons/favicon.png"
+        type="image/x-icon"
+      />
       <Script
         strategy="lazyOnload"
         async
-        defer
         src="https://kit.fontawesome.com/1c4700fdde.js"
         crossOrigin="anonymous"
       />
+      {/* {isBrowser && (
+          <> */}
       <Script
+        async
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `(function (w, d, s, l, i) {
@@ -37,10 +52,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           j.async = true;
           j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
           f.parentNode.insertBefore(j, f);
-        }, 1000)
+        }, 15000)
       })(window, document, "script", "dataLayer", "GTM-K5D4LGB");`,
         }}
       ></Script>
+      {/* </>
+        )} */}
       <ErrorBoundary>
         <Provider store={store}>
           <Component {...pageProps} />;
@@ -51,3 +68,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 }
 
 export default MyApp;
+
+// MyApp.getInitialProps = async (context: AppContext) => {
+//   const ctx = await App.getInitialProps(context);
+//   const userAgend = context.ctx.req?.headers["user-agent"];
+//   console.log({ userAgend });
+//   const isBrowser = BrowserDetect(userAgend);
+
+//   return { ...ctx, isBrowser };
+// };

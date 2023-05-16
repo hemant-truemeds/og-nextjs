@@ -3,6 +3,7 @@ import {
   GetServerSideProps,
   GetServerSidePropsContext,
   GetStaticProps,
+  GetStaticPropsContext,
   PreviewData,
 } from "next";
 import { HomepageApiCalls } from "@api/apiCalls/homepageApiCalls";
@@ -24,8 +25,8 @@ const Home: React.FC<IHomePage> = (props) => {
   return <HomeModule {...props} />;
 };
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
 ) => {
   try {
     const {
@@ -36,7 +37,8 @@ export const getServerSideProps: GetServerSideProps = async (
       mobileMaster = {},
     } = await HomepageApiCalls();
     // console.log("ssr", res?.bannerData);
-    const { resolvedUrl } = context;
+    // const { resolvedUrl } = context;
+    let resolvedUrl = "";
     const abosoluteUrl = `${process.env.ROOT_HOST}${resolvedUrl}`;
     return {
       props: {

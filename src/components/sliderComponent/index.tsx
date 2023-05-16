@@ -57,6 +57,7 @@ const SliderComponents = (props: IProps) => {
                   {...(index === 0 ? { priority: true } : { loading: "lazy" })}
                   width="700"
                   height="400"
+                  customWidth="700"
                   objectFit="contain"
                   className={styles.customImage}
                   src={item?.image}

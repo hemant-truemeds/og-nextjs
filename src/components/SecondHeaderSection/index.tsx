@@ -16,10 +16,10 @@ const SecondHeaderSection = () => {
         <SearchBar />
       </div>
       <div className={styles.leftImgWrapper}>
-        <Image layout="fill" src={leftSvg} alt="left image" priority />
+        <Image layout="fill" src={leftSvg} alt="left image" />
       </div>
       <div className={styles.rightImgWrapper}>
-        <Image layout="fill" src={rightSvg} alt="right image" priority />
+        <Image layout="fill" src={rightSvg} alt="right image" />
       </div>
     </div>
   );
